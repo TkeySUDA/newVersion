@@ -22,8 +22,20 @@
     if (self) {
         // Initialization code
 
-        city = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 80, 40)];
+        city = [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 200, 30)];
         [self addSubview:city];
+        
+        date = [[UILabel alloc]initWithFrame:CGRectMake(10, 40, 200, 30)];
+        [self addSubview:date];
+        
+        week = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, 200, 30)];
+        [self addSubview:week];
+        
+        fchh = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 200, 30)];
+        [self addSubview:fchh];
+        
+        temp = [[UILabel alloc]initWithFrame:CGRectMake(10, 130, 200, 30)];
+        [self addSubview:temp];
     }
     return self;
 }

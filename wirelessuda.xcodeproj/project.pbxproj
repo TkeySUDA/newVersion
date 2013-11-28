@@ -87,7 +87,6 @@
 		751BDF271844E09900E34417 /* SchoolNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF251844E09900E34417 /* SchoolNewsViewController.m */; };
 		751BDF2C1844E2A600E34417 /* SchoolNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF2B1844E2A600E34417 /* SchoolNewsCell.m */; };
 		752B70031841BD5400D57BD1 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70021841BD5400D57BD1 /* WeatherModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		752B70061841BD6A00D57BD1 /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70051841BD6A00D57BD1 /* WeatherData.m */; };
 		752B70091841BD8A00D57BD1 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70081841BD8A00D57BD1 /* WeatherView.m */; };
 		752B700C1841BDB000D57BD1 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B700B1841BDB000D57BD1 /* WeatherViewController.m */; };
 		7532E620182F9FEC00498BB0 /* GateWayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7532E61F182F9FEC00498BB0 /* GateWayViewController.m */; };
@@ -326,8 +325,6 @@
 		751BDF2B1844E2A600E34417 /* SchoolNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsCell.m; sourceTree = "<group>"; };
 		752B70011841BD5400D57BD1 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = SOURCE_ROOT; };
 		752B70021841BD5400D57BD1 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = SOURCE_ROOT; };
-		752B70041841BD6A00D57BD1 /* WeatherData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherData.h; sourceTree = SOURCE_ROOT; };
-		752B70051841BD6A00D57BD1 /* WeatherData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherData.m; sourceTree = SOURCE_ROOT; };
 		752B70071841BD8A00D57BD1 /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = SOURCE_ROOT; };
 		752B70081841BD8A00D57BD1 /* WeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = SOURCE_ROOT; };
 		752B700A1841BDB000D57BD1 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = SOURCE_ROOT; };
@@ -806,8 +803,6 @@
 			children = (
 				752B70011841BD5400D57BD1 /* WeatherModel.h */,
 				752B70021841BD5400D57BD1 /* WeatherModel.m */,
-				752B70041841BD6A00D57BD1 /* WeatherData.h */,
-				752B70051841BD6A00D57BD1 /* WeatherData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1365,7 +1360,6 @@
 				0415644F18339B5A00892EF1 /* UIView+Screenshot.m in Sources */,
 				041564C31833B93F00892EF1 /* SBJsonWriter.m in Sources */,
 				752B70091841BD8A00D57BD1 /* WeatherView.m in Sources */,
-				752B70061841BD6A00D57BD1 /* WeatherData.m in Sources */,
 				7560B39C183F80B0003F34E8 /* BindPhoneVaildata.m in Sources */,
 				04FE53D91843F951002C4349 /* HelpAndSugestionViewController.m in Sources */,
 				04FE53D21843EA71002C4349 /* CheckNetWork.m in Sources */,

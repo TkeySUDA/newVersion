@@ -8,7 +8,6 @@
 
 #import "WeatherViewController.h"
 #import "WeatherView.h"
-#import "WeatherData.h"
 
 @interface WeatherViewController ()
 
@@ -33,16 +32,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     WeatherView *weatherView = [[WeatherView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    
-    //WeatherData *data = [[WeatherData alloc]init];
-    //NSDictionary *weatherInfo = [data startJSONSting];
-    
+        
     WeatherModel *weather = [WeatherModel shareInstance];
     weather.delegate = self;
     [weather cityUrl];
     
-    weatherView.city.text  = [result objectForKey:@"city"];
-    NSLog(@"%@",[result objectForKey:@"city"]);
+    weatherView.city.text = [result objectForKey:@"city"];
+    weatherView.date.text = [result objectForKey:@"date_y"];
+    weatherView.week.text = [result objectForKey:@"week"];
+    weatherView.fchh.text = [result objectForKey:@"img_title_single"];
+    weatherView.temp.text = [result objectForKey:@"temp1"];
     [self.view addSubview:weatherView];
     
 }

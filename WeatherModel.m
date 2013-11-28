@@ -50,11 +50,12 @@
 {
     //[self getCityCode];
     NSString *url = @"http://m.weather.com.cn/data/101190401.html";
-    //url = [url stringByReplacingOccurrencesOfString:@"cityCode" withString:cityCode];
+    url = [url stringByReplacingOccurrencesOfString:@"cityCode" withString:cityCode];
     NSURL *urlList = [NSURL URLWithString:url];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:urlList];
     request.delegate = self;
-    [request startSynchronous];
+    [request retain];
+    [request startAsynchronous];
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request

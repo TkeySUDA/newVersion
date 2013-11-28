@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSString *cityCode;
 
 + (WeatherModel *)shareInstance;
-- (void)getCityCode;//返回城市代码
+//- (void)getCityCode;//返回城市代码
 - (void) cityUrl;
 
 @end

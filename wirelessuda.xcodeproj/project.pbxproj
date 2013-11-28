@@ -86,7 +86,7 @@
 		751BDF261844E09900E34417 /* SchoolNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF231844E09900E34417 /* SchoolNewsDetailViewController.m */; };
 		751BDF271844E09900E34417 /* SchoolNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF251844E09900E34417 /* SchoolNewsViewController.m */; };
 		751BDF2C1844E2A600E34417 /* SchoolNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF2B1844E2A600E34417 /* SchoolNewsCell.m */; };
-		752B70031841BD5400D57BD1 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70021841BD5400D57BD1 /* WeatherModel.m */; };
+		752B70031841BD5400D57BD1 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70021841BD5400D57BD1 /* WeatherModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		752B70061841BD6A00D57BD1 /* WeatherData.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70051841BD6A00D57BD1 /* WeatherData.m */; };
 		752B70091841BD8A00D57BD1 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70081841BD8A00D57BD1 /* WeatherView.m */; };
 		752B700C1841BDB000D57BD1 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B700B1841BDB000D57BD1 /* WeatherViewController.m */; };

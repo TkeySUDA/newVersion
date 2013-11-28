@@ -241,10 +241,8 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationController.navigationBar.hidden= YES;
-    if (self.navigationController.navigationBar.hidden==YES) {
-        NSLog(@"......%@",@"ye");
-    }
 }
+
 
 - (void)didReceiveMemoryWarning
 {

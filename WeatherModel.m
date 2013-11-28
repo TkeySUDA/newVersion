@@ -13,7 +13,7 @@
 @implementation WeatherModel
 
 @synthesize delegate;
-@synthesize cityCode;
+@synthesize weatherId;
 
 + (WeatherModel *)shareInstance
 {
@@ -26,44 +26,35 @@
 //    //解析网址通过ip 获取城市天气代码
 //    NSURL *url = [NSURL URLWithString:@"http://61.4.185.48:81/g/"];
 //    
-//    //定义一个NSError对象，用于捕获错误信息
-//    NSError *error;
-//    NSString *jsonString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+////    //定义一个NSError对象，用于捕获错误信息
+////    NSError *error;
+////    NSString *jsonString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 //    
+//    ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:url];
+//    request.tag=1;
+//    request.delegate=self;
+//    [request retain];
+//    [request startAsynchronous];
 //    //得到城市代码字符串，截取出城市代码
-//    NSString *Str;
-//    for (int i = 0; i<=[jsonString length]; i++)
-//    {
-//        for (int j = i+1; j <=[jsonString length]; j++)
-//        {
-//            Str = [jsonString substringWithRange:NSMakeRange(i, j-i)];
-//            if ([Str isEqualToString:@"id"]) {
-//                if (![[jsonString substringWithRange:NSMakeRange(i+3, 1)] isEqualToString:@"c"]) {
-//                    cityCode = [jsonString substringWithRange:NSMakeRange(i+3, 9)];
-//                }
-//            }
-//        }
-//    }
+//
 //}
 
 - (void)cityUrl
 {
-    //[self getCityCode];
     NSString *url = @"http://m.weather.com.cn/data/101190401.html";
-    url = [url stringByReplacingOccurrencesOfString:@"cityCode" withString:cityCode];
     NSURL *urlList = [NSURL URLWithString:url];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:urlList];
     request.delegate = self;
-    [request retain];
-    [request startAsynchronous];
+    [request startSynchronous];
 }
 
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    NSString *responseString=request.responseString;
-    NSDictionary *response = [responseString JSONValue];
-    NSDictionary *result = [response objectForKey:@"weatherinfo"];
-    [delegate getResult:result];
+        NSString *responseString=request.responseString;
+        NSDictionary *response = [responseString JSONValue];
+        NSDictionary *result = [response objectForKey:@"weatherinfo"];
+        [delegate getResult:result];
+
 }
 
 - (void)requestFailed:(ASIHTTPRequest *)request

@@ -31,20 +31,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.detailWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT)];
     
-    NSString *html = [NSString stringWithFormat:
-                      @"<html> \n"
-                      "<head> \n"
-                      "<style type=\"text/css\"> \n"
-                      "* {font-family: \"%@\"; font-size: %@;}\n"
-                      "</style> \n"
-                      "</head> \n"
-                      "<body>%@</body> \n"
-                      "</html>",
-                      @"Helvetica",
-                      [NSNumber numberWithInt:14],
-                      self.detailURL];
+    self.detailWebView.scalesPageToFit = YES;
     
-    [self.detailWebView loadHTMLString:html baseURL:nil];
+    [self.detailWebView loadHTMLString:[NSString stringWithContentsOfURL:[NSURL URLWithString:self.detailURL] encoding:NSUTF8StringEncoding error:nil]  baseURL:nil];
     [self.view addSubview:self.detailWebView];
 }
 

@@ -4,7 +4,6 @@
 //
 //  Created by Mac on 13-10-23.
 //  Copyright (c) 2013年 苏州大学信息化建设与管理中心. All rights reserved.
-// commit test  by Tkey
 
 #import "WLSudaMainViewController.h"
 #import "GateWayLoginViewController.h"

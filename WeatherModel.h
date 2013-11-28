@@ -14,10 +14,9 @@
 @interface WeatherModel : NSObject<ASIHTTPRequestDelegate>
 
 @property (strong, nonatomic) id<WeatherDelegate> delegate;
-@property (strong, nonatomic) NSString *cityCode;
+@property (strong, nonatomic) NSString *weatherId;
 
 + (WeatherModel *)shareInstance;
-//- (void)getCityCode;//返回城市代码
 - (void) cityUrl;
 
 @end

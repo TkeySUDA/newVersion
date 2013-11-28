@@ -42,6 +42,7 @@
     [weather cityUrl];
     
     weatherView.city.text  = [result objectForKey:@"city"];
+    NSLog(@"%@",[result objectForKey:@"city"]);
     [self.view addSubview:weatherView];
     
 }

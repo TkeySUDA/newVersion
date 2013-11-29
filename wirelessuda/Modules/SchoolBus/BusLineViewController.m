@@ -20,15 +20,7 @@
 
 
 
-//- (void)viewDidLoad
-//{
-////    CGRect tableRect;
-////    tableRect.origin.y = descriptionLabel.bounds.origin.y + 80;
-////    busLineTable =  [[UITableView alloc] initWithFrame:tableRect style:UITableViewStyleGrouped];
-////    [busLineTable setDataSource:self];
-////    [busLineTable setDelegate:self];
-////    [[self view] addSubview:busLineTable];
-//}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

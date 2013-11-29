@@ -137,7 +137,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SchoolNewsDetailViewController *detailViewController = [[SchoolNewsDetailViewController alloc] initWithNibName:nil bundle:nil];
-    detailViewController.detailURL = [[rssList objectAtIndex:indexPath.row]objectForKey:@"description"];
+    detailViewController.detailURL = [NSString stringWithFormat:@"http://jsglxt.suda.edu.cn/noticeDetail.action?detailUrl=%@",[[rssList objectAtIndex:indexPath.row]objectForKey:@"link"]];
     [self.navigationController pushViewController:detailViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

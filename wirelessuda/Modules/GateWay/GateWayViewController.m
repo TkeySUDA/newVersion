@@ -48,6 +48,11 @@
                                                                action:@selector(backAction:)];
     self.navigationItem.leftBarButtonItem = BackBtn;
     
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"退出登录"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(cancelClick:)];
+    self.navigationItem.rightBarButtonItem=cancel;
     //通知中心addObserver
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(transformView:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -119,7 +124,11 @@
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
+-(void)cancelClick:(id)sender
+{
+    LoginViewController *loginViewController=[[LoginViewController alloc]initWithNibName:Nil bundle:Nil];
+    [self.navigationController pushViewController:loginViewController animated:YES];
+}
 - (void)onClickOpen:(UIButton *)button
 {
     if(button.tag == 0)

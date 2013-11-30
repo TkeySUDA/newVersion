@@ -35,7 +35,7 @@
 */
 -(void)setImage
 {
-#pragma mark - 初始化数组并添加图片
+//#pragma mark - 初始化数组并添加图片
     imagePage = [[NSMutableArray alloc]init];
     [imagePage addObject:@"http://www.suda.edu.cn/upload/2013050269785665.jpg"];
     [imagePage addObject:@"http://www.suda.edu.cn/upload/image/20130911/20130911161782038203.jpg"];
@@ -43,6 +43,8 @@
     [imagePage addObject:@"http://www.suda.edu.cn/upload/2013061100435728.jpg"];
     
 #pragma mark - 创建四个图片
+    FirstPageModel *firstPageModel=[FirstPageModel shareInstance];
+    [firstPageModel startFirstPageRequest];
     for (int i = 0; i < [imagePage count]; i++) {
         UIButton *imageView = [UIButton buttonWithType:UIButtonTypeCustom];
         [imageView setImageWithURL:[NSURL URLWithString:[imagePage objectAtIndex:i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultPic.png"]];
@@ -69,6 +71,11 @@
     [self scrollRectToVisible:CGRectMake(320, 0, 320, 150) animated:NO];
 
 }
+-(void)getFirstPageNews:(NSMutableArray *)newsData
+{
+    
+}
+
 -(void)newsClicked:(UIButton *)button
 {
     

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardModel.h"
 
-@interface CardLoginViewController : UIViewController
+@interface CardLoginViewController : UIViewController<CardDelegate>
 
 @property (strong, nonatomic)UILabel *usernameLabel;
 @property (strong, nonatomic)UITextField *usernameField;

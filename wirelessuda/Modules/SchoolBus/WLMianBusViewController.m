@@ -16,7 +16,7 @@
 {
 
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor whiteColor];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];  //设置statusbar为白底黑字
     [campus1 setBackgroundColor:[UIColor greenSeaColor]];
     [campus1 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];

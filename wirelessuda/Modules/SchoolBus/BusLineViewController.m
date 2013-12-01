@@ -9,6 +9,8 @@
 #import "BusLineViewController.h"
 #import "lineDetailViewController.h"
 #import "BusLineDataSourde.h"
+#import "BusLineCustomCell.h"
+#import "FlatUIKit.h"
 
 @implementation BusLineViewController
 
@@ -34,7 +36,7 @@
 {
     [super viewDidLoad];
     lineData = [[[NSMutableArray alloc] initWithArray:[[BusLineDataSourde sharedData] linesArrayAndTimeSorted:selectTitle]] mutableCopy];
-    NSLog(@"%i", lineData.count);
+    NSLog(@"string");
 }
 
 
@@ -44,45 +46,55 @@
  numberOfRowsInSection:(NSInteger)section
 {
     return [lineData count];
-
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    cell.backgroundColor = [UIColor blueColor];
+    
+    
+    NSLog(@"hello");
+    
+    NSMutableDictionary *p =  [lineData objectAtIndex:[indexPath row]];
+    
+    
+    BusLineCustomCell *cell = [tableView  dequeueReusableCellWithIdentifier:@"BusLineCustomCell"];
+    
     if (!cell) {
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:@"UITableViewCell"];
-        cell.backgroundColor = [UIColor blueColor];
+            cell = [[BusLineCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BusLineCustomCell"];
     }
-    NSMutableDictionary *p = [lineData objectAtIndex:[indexPath row]];
+
     
     if ([p objectForKey:@"Flag"] == [NSNumber numberWithInt:1]) {
-        cell.backgroundColor = [UIColor greenColor];
+        cell.timeLabel.backgroundColor = [UIColor greenColor];
         NSMutableString *t = [NSMutableString stringWithFormat:@"%@",[p objectForKey:@"Name"]];
-        [t appendString:[NSString stringWithFormat:@"  %@分钟后可乘",[p objectForKey:@"Last"]]];
-        [[cell textLabel] setText:t];
+        [cell.nameLabel setText:t];
+        [cell.timeLabel setText:[NSString stringWithFormat:@"%@分钟后可乘",[p objectForKey:@"Last"]]];
+        cell.timeLabel.backgroundColor = [UIColor greenColor];
+        [cell.descriptionLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Description"]]];
+        [cell.stationLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Station"]]];
         
     } else {
         if ([p objectForKey:@"Flag"] == [NSNumber numberWithInt:2]) {
             NSMutableString *t = [NSMutableString stringWithFormat:@"%@",[p objectForKey:@"Name"]];
-            [t appendString:@"   今日尚有"];
-            [[cell textLabel] setText:t];
-            cell.backgroundColor = [UIColor yellowColor];
+            [cell.nameLabel setText:t];
+            [cell.timeLabel setText:@"今日    尚有"];
+            cell.timeLabel.backgroundColor = [UIColor yellowColor];
+            [cell.descriptionLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Description"]]];
+            [cell.stationLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Station"]]];
+
         }
         else {
             NSMutableString *t = [NSMutableString stringWithFormat:@"%@",[p objectForKey:@"Name"]];
-            [t appendString:@"   今日已无"];
-            [[cell textLabel] setText:t];
+            [cell.nameLabel setText:t];
+            [cell.timeLabel setText:@"今日    已无"];
+            cell.timeLabel.backgroundColor = [UIColor redColor];
+            [cell.descriptionLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Description"]]];
+            [cell.stationLabel setText:[NSString stringWithFormat:@"%@",[p objectForKey:@"Station"]]];
 
-            cell.backgroundColor = [UIColor redColor];
         }
     }
     
-
     return cell;
 }
 
@@ -101,7 +113,10 @@
     selectTitle = title;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80.0;
+}
 
 
 @end

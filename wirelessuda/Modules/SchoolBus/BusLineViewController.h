@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WLMianBusViewController.h"
+#import "BusLineCustomCell.h"
+#import "FlatUIKit.h"
 
 @interface BusLineViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate,buttonSelectDelegate>
@@ -15,7 +17,6 @@
 {
     
     __weak IBOutlet UITableView *busLineTable;
-    __weak IBOutlet UILabel *descriptionLabel;
 }
 
 @property (nonatomic, strong) NSString *selectTitle;

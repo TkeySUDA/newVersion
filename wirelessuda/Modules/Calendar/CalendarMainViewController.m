@@ -30,6 +30,7 @@
     NSArray *segmentedArray = [[NSArray alloc] initWithObjects:@"第一学期", @"第二学期", nil];
     segController = [[UISegmentedControl alloc] initWithItems:segmentedArray];
     descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 159)];
+    segController.selectedSegmentIndex =0;
     
     [self.view addSubview:descriptionLabel];
     
@@ -38,7 +39,7 @@
     [monthView setPagingEnabled:NO];
     [self.view addSubview:monthView];
 
-
+    
     [segController addTarget:self action:@selector(termSelect:) forControlEvents:UIControlEventValueChanged];
     
     [self monthSelect:0];

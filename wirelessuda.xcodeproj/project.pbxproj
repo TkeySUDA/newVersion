@@ -75,6 +75,9 @@
 		04740F41181B90DC0057B109 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3A181B90DC0057B109 /* settings.png */; };
 		04740F42181B90DC0057B109 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3B181B90DC0057B109 /* weather.png */; };
 		04740F43181B90DC0057B109 /* gateway.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3C181B90DC0057B109 /* gateway.png */; };
+		04A73F661849FF33009702A2 /* FirstPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F651849FF33009702A2 /* FirstPageModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		04A73F6A184A22E7009702A2 /* CardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F69184A22E7009702A2 /* CardModel.m */; };
+		04A73F6D184A3103009702A2 /* CardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F6C184A3103009702A2 /* CardData.m */; };
 		04C2E3DE18350BCE00F8F1CE /* LoginValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C2E3DD18350BCE00F8F1CE /* LoginValidate.m */; };
 		04FE53CE1843890F002C4349 /* WLSudaCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE53CD1843890F002C4349 /* WLSudaCommonViewController.m */; };
 		04FE53D21843EA71002C4349 /* CheckNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FE53D11843EA71002C4349 /* CheckNetWork.m */; };
@@ -303,6 +306,12 @@
 		04740F3A181B90DC0057B109 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		04740F3B181B90DC0057B109 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		04740F3C181B90DC0057B109 /* gateway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gateway.png; sourceTree = "<group>"; };
+		04A73F641849FF33009702A2 /* FirstPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPageModel.h; sourceTree = "<group>"; };
+		04A73F651849FF33009702A2 /* FirstPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPageModel.m; sourceTree = "<group>"; };
+		04A73F68184A22E7009702A2 /* CardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardModel.h; sourceTree = "<group>"; };
+		04A73F69184A22E7009702A2 /* CardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardModel.m; sourceTree = "<group>"; };
+		04A73F6B184A3103009702A2 /* CardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardData.h; sourceTree = "<group>"; };
+		04A73F6C184A3103009702A2 /* CardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardData.m; sourceTree = "<group>"; };
 		04C2E3DC18350BCE00F8F1CE /* LoginValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginValidate.h; sourceTree = "<group>"; };
 		04C2E3DD18350BCE00F8F1CE /* LoginValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginValidate.m; sourceTree = "<group>"; };
 		04FE53CC1843890F002C4349 /* WLSudaCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLSudaCommonViewController.h; sourceTree = "<group>"; };
@@ -678,7 +687,7 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		04740F1E181B86710057B109 /* CustomView */ = {
+		04740F1E181B86710057B109 /* FirstPage */ = {
 			isa = PBXGroup;
 			children = (
 				04740F1F181B86710057B109 /* CustomButton.h */,
@@ -687,7 +696,10 @@
 				04740F22181B86710057B109 /* mainViewScrollView.m */,
 				04FE53CC1843890F002C4349 /* WLSudaCommonViewController.h */,
 				04FE53CD1843890F002C4349 /* WLSudaCommonViewController.m */,
+				04A73F641849FF33009702A2 /* FirstPageModel.h */,
+				04A73F651849FF33009702A2 /* FirstPageModel.m */,
 			);
+			name = FirstPage;
 			path = CustomView;
 			sourceTree = "<group>";
 		};
@@ -698,6 +710,17 @@
 				0410093B183502F300BA4835 /* icon */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		04A73F67184A228B009702A2 /* CardModel */ = {
+			isa = PBXGroup;
+			children = (
+				04A73F68184A22E7009702A2 /* CardModel.h */,
+				04A73F69184A22E7009702A2 /* CardModel.m */,
+				04A73F6B184A3103009702A2 /* CardData.h */,
+				04A73F6C184A3103009702A2 /* CardData.m */,
+			);
+			name = CardModel;
 			sourceTree = "<group>";
 		};
 		04BFC707181C847F00B1CF88 /* Modules */ = {
@@ -901,6 +924,7 @@
 		75591A4C18475D700016C85C /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				04A73F67184A228B009702A2 /* CardModel */,
 				75591A5418475DB80016C85C /* CardView */,
 				75591A4D18475D7A0016C85C /* CardViewController */,
 			);
@@ -981,7 +1005,7 @@
 				04FE53CF1843E9FA002C4349 /* Common */,
 				04BFC707181C847F00B1CF88 /* Modules */,
 				04740F35181B90990057B109 /* Images */,
-				04740F1E181B86710057B109 /* CustomView */,
+				04740F1E181B86710057B109 /* FirstPage */,
 				04740F25181B86870057B109 /* WirelessudaAppDelegate.h */,
 				04740F26181B86870057B109 /* WirelessudaAppDelegate.m */,
 				04740F27181B86870057B109 /* WLSudaMainViewController.h */,
@@ -1383,7 +1407,9 @@
 				75591A5218475DB20016C85C /* CardLoginViewController.m in Sources */,
 				75591A6418475DCE0016C85C /* DetailInfoView.m in Sources */,
 				04C2E3DE18350BCE00F8F1CE /* LoginValidate.m in Sources */,
+				04A73F6A184A22E7009702A2 /* CardModel.m in Sources */,
 				0415644E18339B5A00892EF1 /* UIScreen+Scale.m in Sources */,
+				04A73F661849FF33009702A2 /* FirstPageModel.m in Sources */,
 				75715A281843790700F64AF8 /* FUISegmentedControl.m in Sources */,
 				041564731833AD0700892EF1 /* ASIAuthenticationDialog.m in Sources */,
 				75715A2F1843790700F64AF8 /* UINavigationBar+FlatUI.m in Sources */,
@@ -1391,6 +1417,7 @@
 				04740F17181B85100057B109 /* SDWebImageManager.m in Sources */,
 				75715A301843790700F64AF8 /* UIPopoverController+FlatUI.m in Sources */,
 				75591A6618475DCE0016C85C /* PersonInfoView.m in Sources */,
+				04A73F6D184A3103009702A2 /* CardData.m in Sources */,
 				75715A451843790700F64AF8 /* UIImage+ImageEffects.m in Sources */,
 				0410093A1835004100BA4835 /* LoginViewController.m in Sources */,
 				041564741833AD0700892EF1 /* ASIDataCompressor.m in Sources */,

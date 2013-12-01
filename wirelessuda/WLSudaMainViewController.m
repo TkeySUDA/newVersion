@@ -17,6 +17,7 @@
 #import "SchoolNewsViewController.h"
 #import "NewsViewController.h"
 #import "WeatherViewController.h"
+#import "FirstPageModel.h"
 
 @interface WLSudaMainViewController ()
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FirstPageModel.h"
 
-@interface mainViewScrollView : UIScrollView<UIScrollViewDelegate>
+@interface mainViewScrollView : UIScrollView<UIScrollViewDelegate,FirstPageDelegtate>
 
 @property (strong, nonatomic)NSMutableArray *imagePage;
 

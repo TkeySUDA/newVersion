@@ -19,7 +19,6 @@
 {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     LineData = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-//    NSLog(@"%@",LineData);
 }
 
 
@@ -77,7 +76,6 @@
         [lines addObject:[[LineData objectForKey:campus] objectForKey:keys[i]]];
     }
     
-    NSLog(@"这是%@",lines);
     
     NSMutableArray  *returnLines = [[NSMutableArray alloc] init];
     
@@ -115,8 +113,6 @@
         [returnLines addObject:temp];
     }
     
-    
-    NSLog(@"%@", returnLines);
     return returnLines;
 }
 

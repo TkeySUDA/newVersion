@@ -173,6 +173,7 @@
 		75715A471843790700F64AF8 /* WLMianBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75715A1E1843790700F64AF8 /* WLMianBusViewController.m */; };
 		75715A481843790700F64AF8 /* WLMianBusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75715A1F1843790700F64AF8 /* WLMianBusViewController.xib */; };
 		75E21F0C183CE20800EEE74A /* GateWayVaildata.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E21F0B183CE20800EEE74A /* GateWayVaildata.m */; };
+		E59E4BEC184A4FE70037317A /* BusLineCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E59E4BEB184A4FE70037317A /* BusLineCustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -469,6 +470,8 @@
 		75715A1F1843790700F64AF8 /* WLMianBusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WLMianBusViewController.xib; sourceTree = "<group>"; };
 		75E21F0A183CE20800EEE74A /* GateWayVaildata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GateWayVaildata.h; sourceTree = "<group>"; };
 		75E21F0B183CE20800EEE74A /* GateWayVaildata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GateWayVaildata.m; sourceTree = "<group>"; };
+		E59E4BEA184A4FE70037317A /* BusLineCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusLineCustomCell.h; sourceTree = "<group>"; };
+		E59E4BEB184A4FE70037317A /* BusLineCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusLineCustomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1063,6 +1066,8 @@
 		757159D11843790700F64AF8 /* SchoolBus */ = {
 			isa = PBXGroup;
 			children = (
+				E59E4BEA184A4FE70037317A /* BusLineCustomCell.h */,
+				E59E4BEB184A4FE70037317A /* BusLineCustomCell.m */,
 				757159D21843790700F64AF8 /* BuslineData.plist */,
 				757159D31843790700F64AF8 /* BusLineDataSourde.h */,
 				757159D41843790700F64AF8 /* BusLineDataSourde.m */,
@@ -1367,6 +1372,7 @@
 				041564771833AD0700892EF1 /* ASIFormDataRequest.m in Sources */,
 				041564761833AD0700892EF1 /* ASIDownloadCache.m in Sources */,
 				04740F23181B86710057B109 /* CustomButton.m in Sources */,
+				E59E4BEC184A4FE70037317A /* BusLineCustomCell.m in Sources */,
 				75715A461843790700F64AF8 /* UINavigationController+MHDismissModalView.m in Sources */,
 				04740F1C181B85100057B109 /* UIImage+WebP.m in Sources */,
 				0415647B1833AD0700892EF1 /* ASINetworkQueue.m in Sources */,

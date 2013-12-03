@@ -56,8 +56,7 @@
         cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
     }
     NSMutableString *p =  [NSMutableString stringWithFormat:@"第%i站   ",[indexPath row] + 1];
-    NSLog(@"%@",p);
-     [p appendString:[detailLineInfo objectAtIndex:[indexPath row]]];
+    [p appendString:[detailLineInfo objectAtIndex:[indexPath row]]];
     
     [[cell textLabel] setText:p];
     return cell;

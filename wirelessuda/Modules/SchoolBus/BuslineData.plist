@@ -6,6 +6,8 @@
 	<dict>
 		<key>Line1</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：东区东大门 终点：独墅湖  共2站</string>
 			<key>Name</key>
 			<string>直达班</string>
 			<key>Time</key>
@@ -24,7 +26,7 @@
 				<date>2013-11-24T09:00:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>每小时一班</string>
+			<string>上午8：00 至 下午5:00</string>
 			<key>DetailLine</key>
 			<array>
 				<string>东校区东大门</string>
@@ -33,6 +35,8 @@
 		</dict>
 		<key>LIne2</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：东区东大门 终点：独墅湖  共9站</string>
 			<key>Time</key>
 			<array>
 				<date>2013-11-23T23:10:00Z</date>
@@ -41,7 +45,7 @@
 			<key>Name</key>
 			<string>早班1号线</string>
 			<key>Description</key>
-			<string>经停9站</string>
+			<string>工作日 上午 7:10 7:30</string>
 			<key>DetailLine</key>
 			<array>
 				<string>南校区人民路大门口</string>
@@ -57,6 +61,8 @@
 		</dict>
 		<key>Line3</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：东区东大门 终点：独墅湖  共13站</string>
 			<key>Time</key>
 			<array>
 				<date>2013-11-23T23:10:00Z</date>
@@ -65,7 +71,7 @@
 			<key>Name</key>
 			<string>早班2号线</string>
 			<key>Description</key>
-			<string>经停13站</string>
+			<string>上午 7:10 7:30</string>
 			<key>DetailLine</key>
 			<array>
 				<string>本部北大门</string>
@@ -85,6 +91,8 @@
 		</dict>
 		<key>Line4</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：东区东大门 终点：独墅湖  共8站</string>
 			<key>Time</key>
 			<array>
 				<date>2013-11-23T23:10:00Z</date>
@@ -93,7 +101,7 @@
 			<key>Name</key>
 			<string>早班3号线</string>
 			<key>Description</key>
-			<string>经停8站</string>
+			<string>上午 7:00 7:30</string>
 			<key>DetailLine</key>
 			<array>
 				<string>东校区东大门</string>
@@ -108,6 +116,8 @@
 		</dict>
 		<key>Line5</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：东区东大门 终点：独墅湖  共11站</string>
 			<key>Time</key>
 			<array>
 				<date>2013-11-24T10:00:00Z</date>
@@ -115,7 +125,7 @@
 			<key>Name</key>
 			<string>晚班</string>
 			<key>Description</key>
-			<string>经停11站</string>
+			<string>下午 6:00</string>
 			<key>DetailLine</key>
 			<array>
 				<string>南校区人民路大门口</string>
@@ -136,6 +146,8 @@
 	<dict>
 		<key>Line1</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：东校区  共2站</string>
 			<key>Name</key>
 			<string>直达</string>
 			<key>Time</key>
@@ -152,7 +164,7 @@
 				<date>2013-11-24T08:30:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>每小时老校区和独墅湖校区各发一班车</string>
+			<string>上午 8:00 至下午 4:30</string>
 			<key>DetailLine</key>
 			<array>
 				<string>独墅湖校区八食堂</string>
@@ -161,6 +173,8 @@
 		</dict>
 		<key>Line2</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：南校区  共9站</string>
 			<key>Name</key>
 			<string>午班，晚班1号线</string>
 			<key>Time</key>
@@ -185,6 +199,8 @@
 		</dict>
 		<key>Line3</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：本部  共13站</string>
 			<key>Name</key>
 			<string>午班，晚班2号线</string>
 			<key>Time</key>
@@ -193,7 +209,7 @@
 				<date>2013-11-24T09:10:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>经停13站</string>
+			<string>中午 12:10 下午 5:10</string>
 			<key>DetailLine</key>
 			<array>
 				<string>七、八食堂前</string>
@@ -213,6 +229,8 @@
 		</dict>
 		<key>Line4</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：东校区  共8站</string>
 			<key>Name</key>
 			<string>午班，晚班3号线</string>
 			<key>Time</key>
@@ -221,7 +239,7 @@
 				<date>2013-11-24T09:10:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>经停8站</string>
+			<string>中午 12:10 下午 5:10</string>
 			<key>DetailLine</key>
 			<array>
 				<string>七、八食堂前</string>
@@ -236,6 +254,8 @@
 		</dict>
 		<key>Line5</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：南校区  共11站</string>
 			<key>Name</key>
 			<string>夜班</string>
 			<key>Time</key>
@@ -244,7 +264,7 @@
 				<date>2013-11-24T13:30:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>经停11站</string>
+			<string>晚 8:00 9:30</string>
 			<key>DetailLine</key>
 			<array>
 				<string>七、八食堂前</string>
@@ -262,6 +282,8 @@
 		</dict>
 		<key>Line6</key>
 		<dict>
+			<key>Station</key>
+			<string>起始：独墅湖 终点：东校区  共2站</string>
 			<key>Name</key>
 			<string>夜班直达</string>
 			<key>Time</key>
@@ -269,7 +291,7 @@
 				<date>2013-11-24T14:05:00Z</date>
 			</array>
 			<key>Description</key>
-			<string>只一班</string>
+			<string>晚10:05</string>
 			<key>DetailLine</key>
 			<array>
 				<string>独墅湖校区</string>

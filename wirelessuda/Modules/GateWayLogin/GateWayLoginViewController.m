@@ -35,8 +35,8 @@
     
     self.view.backgroundColor=[UIColor whiteColor];
     login=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT)];
-    NSURL *url=[NSURL URLWithString:@"http://wg.suda.edu.cn"];
-    [login loadRequest:[NSURLRequest requestWithURL:url]];
+    //NSURL *url=[NSURL URLWithString:@"http://wg.suda.edu.cn"];
+    //[login loadRequest:[NSURLRequest requestWithURL:url]];
     [self.view addSubview:login];
 }
 
@@ -44,6 +44,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    NSURL *url=[NSURL URLWithString:@"http://wg.suda.edu.cn"];
+    [login loadRequest:[NSURLRequest requestWithURL:url]];
 }
 -(void)viewWillAppear:(BOOL)animated
 {

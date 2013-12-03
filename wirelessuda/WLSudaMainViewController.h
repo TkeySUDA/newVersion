@@ -18,5 +18,5 @@
 @property (strong, nonatomic)mainViewScrollView *topScrollView;
 @property (strong, nonatomic)UIView *subView;
 @property (strong, nonatomic)CheckNetWork *checkNetWork;
-
+@property (strong, nonatomic)NSString *netWorkStatus;
 @end

@@ -75,6 +75,7 @@
 		04740F41181B90DC0057B109 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3A181B90DC0057B109 /* settings.png */; };
 		04740F42181B90DC0057B109 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3B181B90DC0057B109 /* weather.png */; };
 		04740F43181B90DC0057B109 /* gateway.png in Resources */ = {isa = PBXBuildFile; fileRef = 04740F3C181B90DC0057B109 /* gateway.png */; };
+		048FE837184D0EE800620E06 /* CardLoginValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 048FE836184D0EE800620E06 /* CardLoginValidate.m */; };
 		04A73F661849FF33009702A2 /* FirstPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F651849FF33009702A2 /* FirstPageModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		04A73F6A184A22E7009702A2 /* CardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F69184A22E7009702A2 /* CardModel.m */; };
 		04A73F6D184A3103009702A2 /* CardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A73F6C184A3103009702A2 /* CardData.m */; };
@@ -305,6 +306,8 @@
 		04740F3A181B90DC0057B109 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		04740F3B181B90DC0057B109 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		04740F3C181B90DC0057B109 /* gateway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gateway.png; sourceTree = "<group>"; };
+		048FE835184D0EE800620E06 /* CardLoginValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardLoginValidate.h; sourceTree = "<group>"; };
+		048FE836184D0EE800620E06 /* CardLoginValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardLoginValidate.m; sourceTree = "<group>"; };
 		04A73F641849FF33009702A2 /* FirstPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPageModel.h; sourceTree = "<group>"; };
 		04A73F651849FF33009702A2 /* FirstPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPageModel.m; sourceTree = "<group>"; };
 		04A73F68184A22E7009702A2 /* CardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardModel.h; sourceTree = "<group>"; };
@@ -716,6 +719,8 @@
 				04A73F69184A22E7009702A2 /* CardModel.m */,
 				04A73F6B184A3103009702A2 /* CardData.h */,
 				04A73F6C184A3103009702A2 /* CardData.m */,
+				048FE835184D0EE800620E06 /* CardLoginValidate.h */,
+				048FE836184D0EE800620E06 /* CardLoginValidate.m */,
 			);
 			name = CardModel;
 			sourceTree = "<group>";
@@ -1465,6 +1470,7 @@
 				04740F2A181B86870057B109 /* WLSudaMainViewController.m in Sources */,
 				041564BB1833B93F00892EF1 /* SBJsonStreamParserAccumulator.m in Sources */,
 				75715A221843790700F64AF8 /* BusLineViewController.m in Sources */,
+				048FE837184D0EE800620E06 /* CardLoginValidate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

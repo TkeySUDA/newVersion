@@ -27,6 +27,7 @@
 @synthesize topScrollView;
 @synthesize pageControl;
 @synthesize subView;
+@synthesize netWorkStatus;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,6 +65,8 @@
     topScrollView=[[mainViewScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
     topScrollView.delegate=self;
     [topScrollView setImage];
+    netWorkStatus=[CheckNetWork getNetWorkStatus];
+    NSLog(@",,,,net%@",netWorkStatus);
 #pragma mark - 定时器
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
 #pragma mark - 初始化mypagecontrol
@@ -144,15 +147,10 @@
         case 4:
         {
             //苏大通
-            if ([[CheckNetWork getNetWorkStatus] isEqualToString:@"0"]) {
                 CardLoginViewController *cardLoginViewController=[[CardLoginViewController alloc]initWithNibName:nil bundle:nil];
                 [self.navigationController pushViewController:cardLoginViewController animated:YES];
                 cardLoginViewController.navigationController.navigationBar.hidden=NO;
-            }
-            else{
-                UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:nil message:@"您没有连到苏大无线网!!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-                [alertView show];
-            }
+
         }
             break;
         case 5:
@@ -166,15 +164,21 @@
         case 6:
         {
             //校内通知
-            SchoolNewsViewController *schoolNewsViewController = [[SchoolNewsViewController alloc]initWithNibName:nil bundle:nil];
-            [self.navigationController pushViewController:schoolNewsViewController animated:YES];
-            schoolNewsViewController.navigationController.navigationBar.hidden=NO;
+            if ([netWorkStatus isEqualToString:@"0"]) {
+                SchoolNewsViewController *schoolNewsViewController = [[SchoolNewsViewController alloc]initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:schoolNewsViewController animated:YES];
+                schoolNewsViewController.navigationController.navigationBar.hidden=NO;
+            }
+            else{
+                UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:nil message:@"您没有连到苏大无线网!!" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alertView show];
+            }
         }
             break;
         case 7:
         {
             //网关登录
-            if ([[CheckNetWork getNetWorkStatus] isEqualToString:@"0"]) {
+            if ([netWorkStatus isEqualToString:@"0"]) {
                 GateWayLoginViewController *gateWayLogin=[[GateWayLoginViewController alloc]initWithNibName:nil bundle:nil];
                 [self.navigationController pushViewController:gateWayLogin animated:YES];
                 self.navigationController.navigationBar.hidden=NO;

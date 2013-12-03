@@ -7,9 +7,10 @@
 //
 
 typedef enum {
-    Login,
+    CardFirstLogin,
+    CardLogin,
     DetailInfo,
-    ChangePassWord,
+    //ChangePassWord,
     GuaShi,
     Consumption
 } CardLine;
@@ -18,6 +19,7 @@ typedef enum {
 
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequest.h"
+#import "CardData.h"
 
 @interface CardModel : NSObject<ASIHTTPRequestDelegate>
 
@@ -31,6 +33,6 @@ typedef enum {
 
 @optional
 
--(void)getLoginStatus:(NSString *)status;
-
+-(void)getLoginAllResult:(CardAllData *)result;
+-(void)getLoginPartResult:(CardBaseData *)result;
 @end

@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CardData : NSObject
+@interface CardBaseData : NSObject
 
 @property (strong, nonatomic) NSString *status;
+@property (strong, nonatomic) NSString *flag;
+@property (strong, nonatomic) NSString *balance;//余额
+@property (strong, nonatomic) NSString *preTmpBalance;//上次过渡余额
+@property (strong, nonatomic) NSString *tmpBalance;//当前过渡余额;
+
++(id)cardBaseDataWithJson:(NSString *)responseString;
+@end
+
+@interface CardAllData : CardBaseData
+
 @property (strong, nonatomic) NSString *photo;
 @property (strong, nonatomic) NSString *stuNum;
 @property (strong, nonatomic) NSString *name;
@@ -18,9 +28,8 @@
 @property (strong, nonatomic) NSString *idDept;//所属部门
 @property (strong, nonatomic) NSString *pidName;//身份类型，本科生
 @property (strong, nonatomic) NSString *idNumber;//身份证号
-@property (strong, nonatomic) NSString *balance;//余额
-@property (strong, nonatomic) NSString *preTmpBalance;//上次过渡余额
-@property (strong, nonatomic) NSString *tmpBalance;//当前过渡余额;
 
-+(id)cardDataWithJson:(NSDictionary *)cardData;
++(id)cardAllDataWithJson:(NSString *)responseString;
++(void)setDataAsDefault:(CardAllData *)data;
 @end
+

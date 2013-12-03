@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CardModel.h"
+#import "CardLoginValidate.h"
+#import "CardData.h"
 
-@interface CardLoginViewController : UIViewController<CardDelegate>
+@interface CardLoginViewController : UIViewController<CardDelegate,CardLoginValidateDelegate>
 
 @property (strong, nonatomic)UILabel *usernameLabel;
 @property (strong, nonatomic)UITextField *usernameField;
@@ -19,5 +21,8 @@
 @property (strong, nonatomic)UIButton *backButton;
 @property (strong, nonatomic)UIButton *autoLoginButton;
 @property (strong, nonatomic)UILabel *autoLoginLabel;
+
+@property (strong, nonatomic)NSString *autoLogin;
+@property (strong, nonatomic)UIButton* btnAutoLogin;
 
 @end

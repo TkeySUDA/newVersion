@@ -47,6 +47,12 @@
     }
     NSLog(@"aaaaa%f",SCREEN_HEIGHT);
     functionScrollView.backgroundColor=[UIColor orangeColor];
+    
+    detailInfoView=[[DetailInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
+    guaShiView=[[GuaShiView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
+    changePsdView=[[ChangePsdView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
+    consumptionView=[[ConsumptionView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
+    [self.view addSubview:detailInfoView];
     [self.view addSubview:btScrollView];
     [self.view addSubview:personInfoView];
     [self.view addSubview:functionScrollView];
@@ -55,27 +61,19 @@
 {
     if ([which isEqualToString:@"0"]) {
         NSLog(@"详细信息");
-//        [functionScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-        detailInfoView=[[DetailInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
         detailInfoView.backgroundColor=[UIColor redColor];
         [functionScrollView addSubview:detailInfoView];
     }else if ([which isEqualToString:@"1"]){
         NSLog(@"苏大通挂失");
-        //[functionScrollView setContentOffset:CGPointMake(320, 0) animated:YES];
-        guaShiView=[[GuaShiView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
         guaShiView.backgroundColor=[UIColor cyanColor];
         [functionScrollView addSubview:guaShiView];
     }else if ([which isEqualToString:@"2"]){
         NSLog(@"修改密码");
-        //[functionScrollView setContentOffset:CGPointMake(320*2, 0) animated:YES];
-        changePsdView=[[ChangePsdView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
         changePsdView.backgroundColor=[UIColor purpleColor];
         [functionScrollView addSubview:changePsdView];
         
     }else if ([which isEqualToString:@"3"]){
         NSLog(@"消费查询");
-        //[functionScrollView setContentOffset:CGPointMake(320*3, 0) animated:YES];
-         consumptionView=[[ConsumptionView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
         consumptionView.backgroundColor=[UIColor blueColor];
         [functionScrollView addSubview:consumptionView];
     }

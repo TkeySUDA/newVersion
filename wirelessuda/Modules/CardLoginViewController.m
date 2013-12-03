@@ -8,6 +8,7 @@
 
 #import "CardLoginViewController.h"
 #import "CardViewController.h"
+#import "MBProgressHUD.h"
 
 @interface CardLoginViewController ()
 
@@ -18,7 +19,7 @@
 @synthesize passwordLabel,passwordField;
 @synthesize loginButton,backButton;
 @synthesize autoLoginButton,autoLoginLabel;
-
+@synthesize btnAutoLogin,autoLogin;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -80,8 +81,20 @@
     [backButton setBackgroundImage:[UIImage imageNamed:@"return18"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(onBackClick) forControlEvents:UIControlEventTouchUpInside];
     
+    btnAutoLogin=[UIButton buttonWithType:UIButtonTypeCustom];
+    btnAutoLogin.frame=CGRectMake(170, 320, 130, 40);
+    btnAutoLogin.titleLabel.font=[UIFont boldSystemFontOfSize:15];
+    [btnAutoLogin setTitle:@"允许自动登录" forState:UIControlStateNormal];
+    [btnAutoLogin setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    btnAutoLogin.showsTouchWhenHighlighted=YES;
+    //    [btnAutoLogin setImage:[UIImage imageNamed:@"auto_login_frame"] forState:UIControlStateNormal];
+    [btnAutoLogin setImage:[UIImage imageNamed:@"auto_login2"] forState:UIControlStateNormal];
+    btnAutoLogin.tag=0;
+    
+    [btnAutoLogin addTarget:self action:@selector(onAutoLoginClick:) forControlEvents:UIControlEventTouchUpInside];
+    [subBackground addSubview:btnAutoLogin];
     [subBackground addSubview:loginType];
-    [subBackground  addSubview:usernameLabel];
+    [subBackground addSubview:usernameLabel];
     [subBackground addSubview:usernameField];
     [subBackground addSubview:passwordLabel];
     [subBackground addSubview:passwordField];
@@ -91,13 +104,63 @@
     [subBackground addSubview:autoLoginButton];
     [self.view addSubview:subBackground];
 }
+-(void)onAutoLoginClick:(UIButton *)btn
+{
+    if (btn.tag==0) {
+        btn.tag=1;
+        NSLog(@"%d",btn.tag);
+        [btnAutoLogin setImage:[UIImage imageNamed:@"auto_login_frame"] forState:UIControlStateNormal];
+        autoLogin=@"1";
+    }else if(btn.tag==1){
+        btn.tag=0;
+        NSLog(@"%d",btn.tag);
+        [btnAutoLogin setImage:[UIImage imageNamed:@"auto_login2"] forState:UIControlStateNormal];
+        autoLogin=@"0";
+    }
+}
 
 -(void)onLoginClick
 {
-    CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:cardViewController animated:YES];
-    cardViewController.navigationController.navigationBar.hidden=NO;
+    if ([usernameField.text isEqualToString:@""]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请输入用户名！     ";
+        hud.margin = 10.f;
+        hud.yOffset = -60.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [usernameField becomeFirstResponder];
+    }else if ([passwordField.text isEqualToString:@""]){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请输入密码！     ";
+        hud.margin = 10.f;
+        hud.yOffset = -60.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [passwordField becomeFirstResponder];
+    }else{
+    CardLoginValidate *cardLoginValidate=[[CardLoginValidate alloc]init];
+    cardLoginValidate.delegate=self;
+    [cardLoginValidate validateCardLogin:usernameField.text withPassword:passwordField.text withLoginType:@"2" withUserType:@"1"];
+    }
 }
+-(void)getCardAllResult:(CardAllData *)result
+{
+    if ([result.status isEqualToString:@"-2"]) {
+        NSLog(@"登录失败");
+        UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }else if([result.status isEqualToString:@"0"]){
+        NSString *name=result.name;
+        NSString *stuNum=result.stuNum;
+        NSLog(@"登录成功%@,%@",name,stuNum);
+        CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:cardViewController animated:YES];
+        cardViewController.navigationController.navigationBar.hidden=NO;
+    }
+}
+
 -(void)onBackClick
 {
     [self.navigationController popToRootViewControllerAnimated:YES];

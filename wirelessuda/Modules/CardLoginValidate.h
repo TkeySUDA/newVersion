@@ -22,7 +22,6 @@
 
 @optional
 
--(void)getCardAllResult:(CardAllData *)result;
--(void)getCardBaseResult:(CardBaseData *)result;
-
+-(void)getCardResult:(CardAllData *)result;
+-(void)getCardLoginStatus:(NSString *)status;
 @end

@@ -16,9 +16,12 @@
 {
     CardModel *cardModel=[CardModel shareInstance];
     
-    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"cardFirstLogin"] isEqualToString:@"0"]) {
-        //[[NSUserDefaults standardUserDefaults]setObject:@"cardFirstLogin" forKey:@"1"];
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"cardFirstLogin"] isEqualToString:@"1"]&&[[[NSUserDefaults standardUserDefaults] objectForKey:@"cardUsername"]isEqualToString:username]) {
         NSLog(@"不是第一次登录");
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"cardAutoLogin"] isEqualToString:@"1"]) {
+            cardModel.delegate=self;
+            [cardModel startRequest:@"notFirstAndNotAuto" withUrl:@"http://weixin.suda.edu.cn/servlet/LoginToCard" withParam1:username withParam2:password withParam3:nil withParam4:nil];
+        }
     }
     else{
         cardModel.delegate=self;
@@ -26,9 +29,12 @@
         
     }
 }
--(void)getLoginAllResult:(CardAllData *)result
+-(void)getLoginResult:(CardAllData *)result
 {
-    [delegate getCardAllResult:result];
+    [delegate getCardResult:result];
 }
-
+-(void)getLoginStatus:(NSString *)result
+{
+    [delegate getCardLoginStatus:result];
+}
 @end

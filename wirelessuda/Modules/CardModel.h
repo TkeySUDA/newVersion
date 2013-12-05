@@ -33,6 +33,7 @@ typedef enum {
 
 @optional
 
--(void)getLoginAllResult:(CardAllData *)result;
--(void)getLoginPartResult:(CardBaseData *)result;
+-(void)getLoginResult:(CardAllData *)result;
+-(void)getLoginStatus:(NSString *)result;
+
 @end

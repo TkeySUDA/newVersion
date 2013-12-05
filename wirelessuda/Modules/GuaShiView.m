@@ -7,6 +7,7 @@
 //
 
 #import "GuaShiView.h"
+#import "MBProgressHUD.h"
 
 @implementation GuaShiView
 @synthesize usernameLabel,usernameField;
@@ -56,7 +57,21 @@
 }
 -(void)okClicked:(id)sender
 {
-    
+    if ([passwordField.text isEqualToString:@""]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请输入密码！     ";
+        hud.margin = 10.f;
+        hud.yOffset = -60.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [usernameField becomeFirstResponder];
+    }else{
+        CardModel *cardModel=[CardModel shareInstance];
+        cardModel.delegate=self;
+        NSString *account=[[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+        [cardModel startRequest:@"GuaShi" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:passwordField.text withParam3:nil withParam4:nil];
+    }
 }
 
 #pragma mark - 触摸键盘消失

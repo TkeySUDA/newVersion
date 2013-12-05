@@ -7,6 +7,7 @@
 //
 
 #import "ChangePsdView.h"
+#import "MBProgressHUD.h"
 
 @implementation ChangePsdView
 @synthesize beformPsdLabel,beformPsdText;

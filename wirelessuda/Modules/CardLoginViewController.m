@@ -26,6 +26,7 @@
     if (self) {
         // Custom initialization
         self.navigationItem.title=@"首页";
+        autoLogin=@"0";
     }
     return self;
 }
@@ -92,6 +93,12 @@
     btnAutoLogin.tag=0;
     
     [btnAutoLogin addTarget:self action:@selector(onAutoLoginClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+#pragma mark - 触摸键盘消失
+    UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    tapGesture.delegate=(id<UIGestureRecognizerDelegate>)self;
+    [self.view addGestureRecognizer:tapGesture];
+    
     [subBackground addSubview:btnAutoLogin];
     [subBackground addSubview:loginType];
     [subBackground addSubview:usernameLabel];
@@ -103,6 +110,25 @@
     [subBackground addSubview:autoLoginLabel];
     [subBackground addSubview:autoLoginButton];
     [self.view addSubview:subBackground];
+}
+
+#pragma mark - 触摸键盘消失
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        return NO;
+    }
+    return YES;
+}
+
+-(void)tap:(UIGestureRecognizer*)gesture
+{
+    if (self.view.frame.origin.y==-85) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.view.frame=CGRectOffset(self.view.frame, 0, 85);
+        }];
+    }
+    [self.view endEditing:YES];
 }
 -(void)onAutoLoginClick:(UIButton *)btn
 {
@@ -145,16 +171,47 @@
     [cardLoginValidate validateCardLogin:usernameField.text withPassword:passwordField.text withLoginType:@"2" withUserType:@"1"];
     }
 }
--(void)getCardAllResult:(CardAllData *)result
+-(void)getCardResult:(CardAllData *)result
 {
     if ([result.status isEqualToString:@"-2"]) {
         NSLog(@"登录失败");
         UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }else if([result.status isEqualToString:@"0"]){
-        NSString *name=result.name;
-        NSString *stuNum=result.stuNum;
-        NSLog(@"登录成功%@,%@",name,stuNum);
+        if ([autoLogin isEqualToString:@"0"]) {
+            [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardAutoLogin"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }else{
+            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"cardUsername"];
+        [[NSUserDefaults standardUserDefaults]setObject:passwordField.text forKey:@"cardPassword"];
+//        NSString *name=result.name;
+//        NSString *stuNum=result.stuNum;
+//        NSLog(@"登录成功%@,%@",name,stuNum);
+        CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:cardViewController animated:YES];
+        cardViewController.navigationController.navigationBar.hidden=NO;
+    }
+}
+-(void)getCardLoginStatus:(NSString *)status
+{
+    if ([status isEqualToString:@"-2"]) {
+        NSLog(@"登录失败");
+        UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else if ([status isEqualToString:@"0"]){
+        if ([autoLogin isEqualToString:@"0"]) {
+            [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardAutoLogin"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }else{
+            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"cardUsername"];
+        [[NSUserDefaults standardUserDefaults]setObject:passwordField.text forKey:@"cardPassword"];
         CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:cardViewController animated:YES];
         cardViewController.navigationController.navigationBar.hidden=NO;

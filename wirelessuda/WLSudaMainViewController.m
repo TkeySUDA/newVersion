@@ -18,6 +18,7 @@
 #import "NewsViewController.h"
 #import "WeatherViewController.h"
 #import "FirstPageModel.h"
+#import "CardViewController.h"
 
 @interface WLSudaMainViewController ()
 
@@ -147,9 +148,17 @@
         case 4:
         {
             //苏大通
+            NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            if ([[defaults objectForKey:@"cardAutoLogin"] isEqualToString:@"0"]) {
+                
+                CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:cardViewController animated:YES];
+                cardViewController.navigationController.navigationBar.hidden=NO;
+            }else{
                 CardLoginViewController *cardLoginViewController=[[CardLoginViewController alloc]initWithNibName:nil bundle:nil];
                 [self.navigationController pushViewController:cardLoginViewController animated:YES];
                 cardLoginViewController.navigationController.navigationBar.hidden=NO;
+            }
 
         }
             break;

@@ -8,6 +8,7 @@
 
 #import "CardViewController.h"
 #import "CustomButton.h"
+#import "CardLoginViewController.h"
 
 @interface CardViewController ()
 
@@ -37,6 +38,18 @@
     personInfoView=[[PersonInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
     btScrollView=[[BtScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 64)];
     btScrollView.delegate=self;
+    
+#pragma mark - 返回按钮
+    UIBarButtonItem *BackBtn = [[UIBarButtonItem alloc] initWithTitle:@"首页"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem = BackBtn;
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"退出登录"
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:@selector(cancelClick:)];
+    self.navigationItem.rightBarButtonItem=cancel;
     functionScrollView=[[UIView alloc]init];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         functionScrollView.frame=CGRectMake(0, 164, 320, SCREEN_HEIGHT-164-70);
@@ -56,6 +69,16 @@
     [self.view addSubview:btScrollView];
     [self.view addSubview:personInfoView];
     [self.view addSubview:functionScrollView];
+}
+-(void)backAction:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+-(void)cancelClick:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
+    CardLoginViewController *cardLoginViewController=[[CardLoginViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:cardLoginViewController animated:YES];
 }
 -(void)buttonClick:(NSString *)which
 {

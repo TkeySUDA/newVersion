@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardModel.h"
 
-@interface GuaShiView : UIView
+@interface GuaShiView : UIView<CardDelegate>
 
 @property (strong, nonatomic)UILabel *usernameLabel;
 @property (strong, nonatomic)UILabel *usernameField;

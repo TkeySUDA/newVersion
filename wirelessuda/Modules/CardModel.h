@@ -10,7 +10,7 @@ typedef enum {
     CardFirstLogin,
     CardLogin,
     DetailInfo,
-    ChangePassWord,
+    PassWord,
     GuaShi,
     Consumption
 } CardLine;

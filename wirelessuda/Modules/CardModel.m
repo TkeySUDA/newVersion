@@ -48,8 +48,8 @@
         NSURL *urlLast=[NSURL URLWithString:urlString];
         ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
         request.delegate=self;
-        request.tag=ChangePassWord;
-        [request startAsynchronous];
+        request.tag=PassWord;
+        [request startSynchronous];
     }
 }
 
@@ -75,8 +75,9 @@
         NSDictionary *result=[[responseString JSONValue]objectForKey:@"result"];
         NSString *status=[result objectForKey:@"status"];
         [delegate getGuaShiResult:status];
-    }else if (request.tag==ChangePassWord){
-        
+    }else if (request.tag==PassWord){
+        NSLog(@"修改密码成功");
+        [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardFirstLogin"];
     }
 }
 @end

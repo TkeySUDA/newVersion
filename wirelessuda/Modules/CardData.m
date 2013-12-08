@@ -63,6 +63,7 @@
     NSDictionary *allData=[NSDictionary dictionaryWithObjectsAndKeys:data.photo,@"photo",data.stuNum,@"stuNum",data.name,@"name",data.account,@"account",data.idDept,@"idDept",data.pidName,@"pidName",data.idNumber,@"idNumber", nil];
     [userDefault setObject:allData forKey:@"cardAllData"];
     [userDefault setObject:data.account forKey:@"account"];
+    [userDefault setObject:data.flag forKey:@"flag"];
     [userDefault synchronize];
 }
 

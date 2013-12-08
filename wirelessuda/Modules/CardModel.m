@@ -36,13 +36,14 @@
         request.delegate=self;
         request.tag=CardFirstLogin;
         [request startSynchronous];
-    }else if ([tag isEqualToString:@"GusShi"]){
+    }else if ([tag isEqualToString:@"GuaShi"]){
         NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@",url,param1,param2];
         NSURL *urlLast=[NSURL URLWithString:urlString];
+        NSLog(@"url:%@",urlString);
         ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
         request.delegate=self;
         request.tag=GuaShi;
-        [request startAsynchronous];
+        [request startSynchronous];
     }else if ([tag isEqualToString:@"ChangePassword"]){
         NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@&newPassword=%@",url,param1,param2,param2];
         NSURL *urlLast=[NSURL URLWithString:urlString];
@@ -72,9 +73,10 @@
         [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardFirstLogin"];
     }else if(request.tag==GuaShi)
     {
+        NSLog(@"挂失：%@",responseString);
         NSDictionary *result=[[responseString JSONValue]objectForKey:@"result"];
-        NSString *status=[result objectForKey:@"status"];
-        [delegate getGuaShiResult:status];
+        NSString *resultin=[result objectForKey:@"resultin"];
+        [delegate getGuaShiResult:resultin];
     }else if (request.tag==PassWord){
         NSLog(@"修改密码成功");
         [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardFirstLogin"];

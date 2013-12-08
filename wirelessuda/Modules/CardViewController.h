@@ -24,5 +24,5 @@
 @property (strong, nonatomic)GuaShiView *guaShiView;
 @property (strong, nonatomic)ChangePsdView *changePsdView;
 @property (strong, nonatomic)ConsumptionView *consumptionView;
-
+@property (strong, nonatomic)UIView *change;
 @end

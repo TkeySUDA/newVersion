@@ -70,13 +70,15 @@
         CardModel *cardModel=[CardModel shareInstance];
         cardModel.delegate=self;
         NSString *account=[[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+        NSLog(@"account:%@",account);
         [cardModel startRequest:@"GuaShi" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:passwordField.text withParam3:nil withParam4:nil];
     }
 }
 -(void)getGuaShiResult:(NSString *)result
 {
-    if ([result isEqualToString:@"0"]) {
-        NSLog(@"挂失成功");
+    if ([result isEqualToString:@"操作成功"]) {
+        //拿动态数据？？？
+        [[NSUserDefaults standardUserDefaults]setObject:@"001001000100004" forKey:@"flag"];
     }else{
         NSLog(@"挂失失败");
     }

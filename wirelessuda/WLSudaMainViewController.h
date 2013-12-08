@@ -11,6 +11,7 @@
 #import "CustomButton.h"
 #import "WLSudaCommonViewController.h"
 #import "CheckNetWork.h"
+#import "CardModel.h"
 
 @interface WLSudaMainViewController : UIViewController<UIScrollViewDelegate>
 

@@ -43,6 +43,13 @@
         request.delegate=self;
         request.tag=GuaShi;
         [request startAsynchronous];
+    }else if ([tag isEqualToString:@"ChangePassword"]){
+        NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@&newPassword=%@",url,param1,param2,param2];
+        NSURL *urlLast=[NSURL URLWithString:urlString];
+        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
+        request.delegate=self;
+        request.tag=ChangePassWord;
+        [request startAsynchronous];
     }
 }
 
@@ -65,6 +72,10 @@
         [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardFirstLogin"];
     }else if(request.tag==GuaShi)
     {
+        NSDictionary *result=[[responseString JSONValue]objectForKey:@"result"];
+        NSString *status=[result objectForKey:@"status"];
+        [delegate getGuaShiResult:status];
+    }else if (request.tag==ChangePassWord){
         
     }
 }

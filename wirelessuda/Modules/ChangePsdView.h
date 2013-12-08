@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardModel.h"
 
-@interface ChangePsdView : UIView
+@interface ChangePsdView : UIView<CardDelegate>
 
 @property (strong, nonatomic)UILabel *beformPsdLabel;
 @property (strong, nonatomic)UITextField *beformPsdText;

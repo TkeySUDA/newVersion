@@ -77,7 +77,39 @@
 }
 -(void)onConfirmClick:(id)sender
 {
-    
+    if ([beformPsdText.text isEqualToString:@""]||![beformPsdText.text isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:@"cardPassword"] ]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请输入原密码！     ";
+        hud.margin = 15.f;
+        hud.yOffset = -100.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [beformPsdText becomeFirstResponder];
+    }else if ([changedPsdText.text isEqualToString:@""]||changedPsdText.text.length<6){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请输入六位以上新密码！     ";
+        hud.margin = 15.f;
+        hud.yOffset = -80.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [changedPsdText becomeFirstResponder];
+    }else if (![conformPsdText.text isEqualToString:changedPsdText.text] ){
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"     请重新输入确认密码！     ";
+        hud.margin = 15.f;
+        hud.yOffset = -40.f;
+        hud.removeFromSuperViewOnHide = YES;
+        [hud hide:YES afterDelay:2];
+        [conformPsdText becomeFirstResponder];
+    }else{
+        CardModel *cardModel=[CardModel shareInstance];
+        cardModel.delegate=self;
+        NSString *account=[[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+        [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
+    }
 }
 #pragma mark - 触摸键盘消失
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch

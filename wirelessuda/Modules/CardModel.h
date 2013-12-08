@@ -10,7 +10,7 @@ typedef enum {
     CardFirstLogin,
     CardLogin,
     DetailInfo,
-    //ChangePassWord,
+    ChangePassWord,
     GuaShi,
     Consumption
 } CardLine;
@@ -35,5 +35,6 @@ typedef enum {
 
 -(void)getLoginResult:(CardAllData *)result;
 -(void)getLoginStatus:(NSString *)result;
+-(void)getGuaShiResult:(NSString *)result;
 
 @end

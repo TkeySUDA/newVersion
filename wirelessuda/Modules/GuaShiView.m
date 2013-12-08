@@ -73,7 +73,14 @@
         [cardModel startRequest:@"GuaShi" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:passwordField.text withParam3:nil withParam4:nil];
     }
 }
-
+-(void)getGuaShiResult:(NSString *)result
+{
+    if ([result isEqualToString:@"0"]) {
+        NSLog(@"挂失成功");
+    }else{
+        NSLog(@"挂失失败");
+    }
+}
 #pragma mark - 触摸键盘消失
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {

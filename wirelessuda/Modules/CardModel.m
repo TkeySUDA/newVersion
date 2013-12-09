@@ -20,23 +20,32 @@
     return cardModel;
 }
 - (void) startRequest:(NSString *)tag withUrl:(NSString *)url withParam1:(NSString *)param1 withParam2:(NSString *)param2 withParam3:(NSString *)param3 withParam4:(NSString *)param4{
-    if ([tag isEqualToString:@"notFirstAndNotAuto"]) {
-        NSString *urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@&usertype=1&logintype=2",url,param1,param2];
-        NSLog(@"%@",urlString);
-        NSURL *urlLast=[NSURL URLWithString:urlString];
-        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
-        request.delegate=self;
-        request.tag=CardLogin;
-        [request startSynchronous];
-    }
-    else if([tag isEqualToString:@"FirstLogin"]){
+//    if ([tag isEqualToString:@"notFirstAndNotAuto"]) {
+//        NSString *urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@&usertype=1&logintype=2",url,param1,param2];
+//        NSLog(@"%@",urlString);
+//        NSURL *urlLast=[NSURL URLWithString:urlString];
+//        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
+//        request.delegate=self;
+//        request.tag=CardLogin;
+//        [request startSynchronous];
+//    }
+//    else
+    if([tag isEqualToString:@"FirstLogin"]){
         NSString *urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@&usertype=1&logintype=2",url,param1,param2];
         NSURL *urlLast=[NSURL URLWithString:urlString];
         ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
         request.delegate=self;
         request.tag=CardFirstLogin;
         [request startSynchronous];
-    }else if ([tag isEqualToString:@"GuaShi"]){
+    }else if ([tag isEqualToString:@"autoLogin"]){
+        NSString *urlString = [NSString stringWithFormat:@"%@?account=%@",url,param1];
+        NSURL *urlLast=[NSURL URLWithString:urlString];
+        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
+        request.delegate=self;
+        request.tag=AutoLogin;
+        [request startSynchronous];
+    }
+    else if ([tag isEqualToString:@"GuaShi"]){
         NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@",url,param1,param2];
         NSURL *urlLast=[NSURL URLWithString:urlString];
         NSLog(@"url:%@",urlString);
@@ -57,21 +66,18 @@
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
     NSString *responseString=request.responseString;
-    if (request.tag==CardLogin) {
-        NSDictionary *result=[[responseString JSONValue] objectForKey:@"result"];
-        NSString *status=[result objectForKey:@"status"];
-        
-        [delegate getLoginStatus:status];
-        NSLog(@"%@",status);
-    }
-    else if (request.tag==CardFirstLogin){
+    if (request.tag==CardFirstLogin){
         CardAllData *cardAllData=[CardAllData cardAllDataWithJson:responseString];
         [CardAllData setDataAsDefault:cardAllData];
         NSDictionary *all=[[NSUserDefaults standardUserDefaults] objectForKey:@"cardAllData"];
         NSLog(@"cardALLdata:%@",all);
         [delegate getLoginResult:cardAllData];
         [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardFirstLogin"];
-    }else if(request.tag==GuaShi)
+    }else if (request.tag==AutoLogin){
+        CardBaseData *cardBaseData=[CardBaseData cardBaseDataWithJson:responseString];
+        [delegate getAutoLoginResult:cardBaseData];
+    }
+    else if(request.tag==GuaShi)
     {
         NSLog(@"挂失：%@",responseString);
         NSDictionary *result=[[responseString JSONValue]objectForKey:@"result"];

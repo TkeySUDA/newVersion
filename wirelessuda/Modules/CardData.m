@@ -50,6 +50,7 @@
         cardAllData.photo=[result objectForKey:@"photo"];
         cardAllData.stuNum=[userDTO objectForKey:@"sno"];
         cardAllData.name=[userDTO objectForKey:@"name"];
+        cardAllData.sexName=[cardUserDTO objectForKey:@"sexname"];
         cardAllData.account=[userDTO objectForKey:@"account"];
         cardAllData.idDept=[cardUserDTO objectForKey:@"iddept"];
         cardAllData.pidName=[cardUserDTO objectForKey:@"pidname"];
@@ -60,7 +61,7 @@
 +(void)setDataAsDefault:(CardAllData *)data
 {
     NSUserDefaults *userDefault=[NSUserDefaults standardUserDefaults];
-    NSDictionary *allData=[NSDictionary dictionaryWithObjectsAndKeys:data.photo,@"photo",data.stuNum,@"stuNum",data.name,@"name",data.account,@"account",data.idDept,@"idDept",data.pidName,@"pidName",data.idNumber,@"idNumber", nil];
+    NSDictionary *allData=[NSDictionary dictionaryWithObjectsAndKeys:data.photo,@"photo",data.stuNum,@"stuNum",data.name,@"name",data.account,@"account",data.idDept,@"idDept",data.pidName,@"pidName",data.idNumber,@"idNumber",data.sexName,@"sexName", nil];
     [userDefault setObject:allData forKey:@"cardAllData"];
     [userDefault setObject:data.account forKey:@"account"];
     [userDefault setObject:data.flag forKey:@"flag"];

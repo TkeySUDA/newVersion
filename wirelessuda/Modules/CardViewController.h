@@ -25,4 +25,7 @@
 @property (strong, nonatomic)ChangePsdView *changePsdView;
 @property (strong, nonatomic)ConsumptionView *consumptionView;
 @property (strong, nonatomic)UIView *change;
+@property (strong, nonatomic)CardAllData *cardAllData;
+@property (strong, nonatomic)CardBaseData *cardBaseData;
+
 @end

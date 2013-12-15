@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSString *idDept;//所属部门
 @property (strong, nonatomic) NSString *pidName;//身份类型，本科生
 @property (strong, nonatomic) NSString *idNumber;//身份证号
+@property (strong, nonatomic) NSString *sexName;
 
 +(id)cardAllDataWithJson:(NSString *)responseString;
 +(void)setDataAsDefault:(CardAllData *)data;

@@ -17,5 +17,5 @@
 @property(strong, nonatomic)UILabel *turnOver;
 @property(strong, nonatomic)UILabel *cardNum;
 
-
+-(void)setStuInfo:(NSDictionary *)stuInfo;
 @end

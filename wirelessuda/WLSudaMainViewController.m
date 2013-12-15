@@ -150,7 +150,10 @@
             //苏大通
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
             if ([[defaults objectForKey:@"cardAutoLogin"] isEqualToString:@"0"]) {
-                
+                NSString *account=[[NSUserDefaults standardUserDefaults]objectForKey:@"account"];
+                CardModel *cardModel=[CardModel shareInstance];
+                cardModel.delegate=self;
+                [cardModel startRequest:@"autoLogin" withUrl:@"http://weixin.suda.edu.cn/servlet/GetUserPartDetail" withParam1:account withParam2: nil withParam3:nil withParam4:nil];
                 CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
                 [self.navigationController pushViewController:cardViewController animated:YES];
                 cardViewController.navigationController.navigationBar.hidden=NO;
@@ -208,6 +211,13 @@
         default:
             break;
     }
+}
+-(void)getAutoLoginResult:(CardBaseData *)result
+{
+    CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
+    cardViewController.cardBaseData=result;
+    [self.navigationController pushViewController:cardViewController animated:YES];
+    cardViewController.navigationController.navigationBar.hidden=NO;
 }
 
 #pragma mark - scrollView 委托函数

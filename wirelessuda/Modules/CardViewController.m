@@ -19,6 +19,7 @@
 @synthesize btScrollView;
 @synthesize functionScrollView;
 @synthesize detailInfoView,guaShiView,changePsdView,consumptionView,change;
+@synthesize cardAllData,cardBaseData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +37,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     personInfoView=[[PersonInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+    NSDictionary *stuInfo=[[NSUserDefaults standardUserDefaults] objectForKey:@"cardAllData"];
+    [personInfoView setStuInfo:stuInfo];
     btScrollView=[[BtScrollView alloc]initWithFrame:CGRectMake(0, 100, 320, 64)];
     btScrollView.delegate=self;
     
@@ -65,11 +68,13 @@
     guaShiView=[[GuaShiView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
     changePsdView=[[ChangePsdView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
     consumptionView=[[ConsumptionView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
+    detailInfoView.backgroundColor=[UIColor redColor];
     change=[[UIView  alloc]init];
     [self.view addSubview:detailInfoView];
     [self.view addSubview:btScrollView];
     [self.view addSubview:personInfoView];
     [self.view addSubview:functionScrollView];
+    [functionScrollView addSubview:detailInfoView];
 }
 -(void)backAction:(id)sender
 {
@@ -78,8 +83,7 @@
 -(void)cancelClick:(id)sender
 {
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
-    CardLoginViewController *cardLoginViewController=[[CardLoginViewController alloc]initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:cardLoginViewController animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)buttonClick:(NSString *)which
 {

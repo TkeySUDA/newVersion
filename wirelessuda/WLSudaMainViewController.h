@@ -13,7 +13,7 @@
 #import "CheckNetWork.h"
 #import "CardModel.h"
 
-@interface WLSudaMainViewController : UIViewController<UIScrollViewDelegate>
+@interface WLSudaMainViewController : UIViewController<UIScrollViewDelegate,CardDelegate>
 
 @property (strong, nonatomic)UIPageControl *pageControl;
 @property (strong, nonatomic)mainViewScrollView *topScrollView;

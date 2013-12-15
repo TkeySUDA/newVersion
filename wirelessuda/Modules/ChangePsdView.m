@@ -13,6 +13,7 @@
 @synthesize beformPsdLabel,beformPsdText;
 @synthesize changedPsdLabel,changedPsdText;
 @synthesize conformPsdLabel,conformPsdText;
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -111,6 +112,12 @@
         [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
     }
 }
+-(void)getChangePsdResult:(NSString *)result{
+    if ([result isEqualToString:@"操作成功"]) {
+        [delegate getPsdSuccedStatus:@"0"];
+    }
+}
+
 #pragma mark - 触摸键盘消失
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {

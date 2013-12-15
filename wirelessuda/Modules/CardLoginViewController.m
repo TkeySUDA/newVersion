@@ -173,7 +173,7 @@
 }
 -(void)getCardResult:(CardAllData *)result
 {
-    if ([result.status isEqualToString:@"-2"]) {
+    if ([result.status isEqualToString:@"-2"]||[result.status isEqualToString:@""]) {
         NSLog(@"登录失败");
         UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];

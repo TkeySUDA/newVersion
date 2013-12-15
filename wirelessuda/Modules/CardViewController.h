@@ -15,7 +15,7 @@
 #import "ChangePsdView.h"
 #import "ConsumptionView.h"
 
-@interface CardViewController : WLSudaCommonViewController<buttonDelegate>
+@interface CardViewController : WLSudaCommonViewController<buttonDelegate,CardGuaShiDelegate,CardChangePsdDelegate>
 
 @property (strong, nonatomic)PersonInfoView *personInfoView;
 @property (strong, nonatomic)BtScrollView *btScrollView;

@@ -12,6 +12,7 @@
 @implementation GuaShiView
 @synthesize usernameLabel,usernameField;
 @synthesize passwordLabel,passwordField;
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -79,6 +80,7 @@
     if ([result isEqualToString:@"操作成功"]) {
         //拿动态数据？？？
         [[NSUserDefaults standardUserDefaults]setObject:@"001001000100004" forKey:@"flag"];
+        [delegate getSuccedStatus:@"0"];
     }else{
         NSLog(@"挂失失败");
     }

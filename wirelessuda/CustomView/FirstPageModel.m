@@ -29,15 +29,14 @@
 -(void)requestFinished:(ASIHTTPRequest *)request
 {
     NSString *responseString=[request responseString];
-    NSDictionary *result=[responseString JSONValue];
-    NSDictionary *news=[[result objectForKey:@"news"] JSONValue];
+    NSDictionary *news=[[responseString JSONValue]objectForKey:@"news"];
     
-    NSDictionary *news1=[[news objectForKey:@"news1"] JSONValue];
-    NSDictionary *news2=[[news objectForKey:@"news2"] JSONValue];
-    NSDictionary *news3=[[news objectForKey:@"news3"] JSONValue];
-    NSDictionary *news4=[[news objectForKey:@"news4"] JSONValue];
-
-    NSLog(@">>>>>>>>>%@",news);
+    NSDictionary *news1=[news objectForKey:@"news1"];
+    NSLog(@"new1:%@",news1);
+    NSDictionary *news2=[news objectForKey:@"news2"];
+    NSLog(@"new2:%@",news2);
+    NSDictionary *news3=[news objectForKey:@"news3"];
+    NSDictionary *news4=[news objectForKey:@"news4"];
     NSMutableArray *newsInfo=[NSMutableArray arrayWithObjects:news1,news2,news3,news4, nil];
     [delegate getFirstPageNews:newsInfo];
 }

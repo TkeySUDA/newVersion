@@ -35,16 +35,35 @@
 */
 -(void)setImage
 {
-//#pragma mark - 初始化数组并添加图片
-    imagePage = [[NSMutableArray alloc]init];
+////#pragma mark - 初始化数组并添加图片
+//    imagePage = [[NSMutableArray alloc]init];
+//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013050269785665.jpg"];
+//    [imagePage addObject:@"http://www.suda.edu.cn/upload/image/20130911/20130911161782038203.jpg"];
+//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013082561558597.jpg"];
+//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013061100435728.jpg"];
+    
+#pragma mark - 创建四个图片
+    FirstPageModel *firstPageModel=[FirstPageModel shareInstance];
+    
+    [firstPageModel startFirstPageRequest];
+    firstPageModel.delegate=self;
+
+
+}
+-(void)getFirstPageNews:(NSMutableArray *)newsData
+{
+    NSLog(@"newsData:%@",newsData);
+    imagePage=[[NSMutableArray alloc]init];
+//    for (int i=0; i<[newsData count]; i++) {
+//        NSString *imageUrl=[[newsData objectAtIndex:i] objectForKey:@"photo"];
+//        [imagePage addObject:imageUrl];
+//    }
+    NSLog(@"imageURL:%@",imagePage);
     [imagePage addObject:@"http://www.suda.edu.cn/upload/2013050269785665.jpg"];
     [imagePage addObject:@"http://www.suda.edu.cn/upload/image/20130911/20130911161782038203.jpg"];
     [imagePage addObject:@"http://www.suda.edu.cn/upload/2013082561558597.jpg"];
     [imagePage addObject:@"http://www.suda.edu.cn/upload/2013061100435728.jpg"];
-    
-#pragma mark - 创建四个图片
-    FirstPageModel *firstPageModel=[FirstPageModel shareInstance];
-    [firstPageModel startFirstPageRequest];
+
     for (int i = 0; i < [imagePage count]; i++) {
         UIButton *imageView = [UIButton buttonWithType:UIButtonTypeCustom];
         [imageView setImageWithURL:[NSURL URLWithString:[imagePage objectAtIndex:i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultPic.png"]];
@@ -54,13 +73,13 @@
     }
     
     UIButton *imageView = [UIButton buttonWithType:UIButtonTypeCustom];
-
+    
     [imageView setImageWithURL:[NSURL URLWithString:[imagePage objectAtIndex:([imagePage count] - 1)]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultPic.png"]];
     imageView.frame = CGRectMake(0, 0, 320, 150);
     [self addSubview:imageView];
     
     imageView = [UIButton buttonWithType:UIButtonTypeCustom];
-
+    
     [imageView setImageWithURL:[NSURL URLWithString:[imagePage objectAtIndex:([imagePage count] - 1)]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultPic.png"]];
     
     imageView.frame = CGRectMake((320 * ([imagePage count] + 1)) , 0, 320, 150);
@@ -69,11 +88,6 @@
     [self setContentSize:CGSizeMake(320 * ([imagePage count] + 2), 150)];
     [self setContentOffset:CGPointMake(0, 0)];
     [self scrollRectToVisible:CGRectMake(320, 0, 320, 150) animated:NO];
-
-}
--(void)getFirstPageNews:(NSMutableArray *)newsData
-{
-    
 }
 
 -(void)newsClicked:(UIButton *)button

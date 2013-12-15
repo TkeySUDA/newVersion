@@ -64,8 +64,9 @@
     }
     
     topScrollView=[[mainViewScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
-    topScrollView.delegate=self;
+
     [topScrollView setImage];
+    topScrollView.delegate=self;
     netWorkStatus=[CheckNetWork getNetWorkStatus];
     NSLog(@",,,,net%@",netWorkStatus);
 #pragma mark - 定时器
@@ -98,6 +99,13 @@
     [self.subView addSubview:pageControl];
     [self.view addSubview:subView];
     
+}
+-(void)getFirstPageDetailNews:(NSString *)image withDetail:(NSString *)detail
+{
+    UIViewController *firstPageNewsViewController=[[UIViewController alloc]initWithNibName:nil bundle:nil];
+    firstPageNewsViewController.view.backgroundColor=[UIColor whiteColor];
+    firstPageNewsViewController.navigationController.navigationBarHidden=NO;
+    [self.navigationController pushViewController:firstPageNewsViewController animated:YES];
 }
 
 -(void)buttonClicked:(id)sender

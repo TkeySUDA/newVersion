@@ -11,6 +11,8 @@
 
 @implementation mainViewScrollView
 @synthesize imagePage;
+@synthesize detail;
+@synthesize delegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,6 +23,7 @@
         self.pagingEnabled=YES;
         self.userInteractionEnabled=YES;
         self.showsHorizontalScrollIndicator=NO;
+        
     }
     return self;
 }
@@ -35,13 +38,6 @@
 */
 -(void)setImage
 {
-////#pragma mark - 初始化数组并添加图片
-//    imagePage = [[NSMutableArray alloc]init];
-//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013050269785665.jpg"];
-//    [imagePage addObject:@"http://www.suda.edu.cn/upload/image/20130911/20130911161782038203.jpg"];
-//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013082561558597.jpg"];
-//    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013061100435728.jpg"];
-    
 #pragma mark - 创建四个图片
     FirstPageModel *firstPageModel=[FirstPageModel shareInstance];
     
@@ -54,20 +50,21 @@
 {
     NSLog(@"newsData:%@",newsData);
     imagePage=[[NSMutableArray alloc]init];
-//    for (int i=0; i<[newsData count]; i++) {
-//        NSString *imageUrl=[[newsData objectAtIndex:i] objectForKey:@"photo"];
-//        [imagePage addObject:imageUrl];
-//    }
-    NSLog(@"imageURL:%@",imagePage);
-    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013050269785665.jpg"];
-    [imagePage addObject:@"http://www.suda.edu.cn/upload/image/20130911/20130911161782038203.jpg"];
-    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013082561558597.jpg"];
-    [imagePage addObject:@"http://www.suda.edu.cn/upload/2013061100435728.jpg"];
-
+    detail=[[NSMutableArray alloc]init];
+    for (int i=0; i<[newsData count]; i++) {
+        NSString *imageUrl=[[newsData objectAtIndex:i] objectForKey:@"photo"];
+        [imagePage addObject:imageUrl];
+        NSString *detailInfo=[[newsData objectAtIndex:i] objectForKey:@"detail"];
+        [detail addObject:detailInfo];
+    }
+    
+    NSLog(@"imageURL:%@,%@",imagePage,detail);
+    
     for (int i = 0; i < [imagePage count]; i++) {
         UIButton *imageView = [UIButton buttonWithType:UIButtonTypeCustom];
         [imageView setImageWithURL:[NSURL URLWithString:[imagePage objectAtIndex:i]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"defaultPic.png"]];
         imageView.frame = CGRectMake((320 * i) +320, 0, 320, 150);
+        imageView.tag=i;
         [imageView addTarget:self action:@selector(newsClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:imageView];
     }
@@ -92,7 +89,8 @@
 
 -(void)newsClicked:(UIButton *)button
 {
-    
+    NSLog(@"%@",[imagePage objectAtIndex:button.tag]);
+    [delegate getFirstPageDetailNews:[imagePage objectAtIndex:button.tag] withDetail:[detail objectAtIndex:button.tag]];
 }
 
 @end

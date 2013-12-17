@@ -89,8 +89,7 @@
 
 -(void)newsClicked:(UIButton *)button
 {
-    NSLog(@"%@",[imagePage objectAtIndex:button.tag]);
-    [buttonDelegate getFirstPageDetailNews:[imagePage objectAtIndex:button.tag] withDetail:[detail objectAtIndex:button.tag]];
+    [buttonDelegate getFirstPageDetailNews:[detail objectAtIndex:button.tag]];
 }
 
 @end

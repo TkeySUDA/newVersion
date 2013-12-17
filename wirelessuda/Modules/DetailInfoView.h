@@ -10,8 +10,8 @@
 
 @interface DetailInfoView : UIView
 
-@property (strong, nonatomic)UILabel *usernameLabel;
-@property (strong, nonatomic)UILabel *usernameField;
-@property (strong, nonatomic)UILabel *passwordLabel;
-
+@property (strong, nonatomic)UILabel *idDeptLabel;//计科院
+@property (strong, nonatomic)UILabel *pidNameLabel;//本科
+@property (strong, nonatomic)UILabel *idNumberLabel;//身份证
+@property (strong, nonatomic)UILabel *balanceLabel;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0404E37C18607CF700F9ADB8 /* FirstPageNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E37B18607CF700F9ADB8 /* FirstPageNewsViewController.m */; };
 		0410093A1835004100BA4835 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041009391835004100BA4835 /* LoginViewController.m */; };
 		0410094B1835035400BA4835 /* auto_login_frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0410093D1835035400BA4835 /* auto_login_frame@2x.png */; };
 		0410094C1835035400BA4835 /* auto_login2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0410093E1835035400BA4835 /* auto_login2@2x.png */; };
@@ -187,6 +188,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0404E37A18607CF700F9ADB8 /* FirstPageNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPageNewsViewController.h; sourceTree = "<group>"; };
+		0404E37B18607CF700F9ADB8 /* FirstPageNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPageNewsViewController.m; sourceTree = "<group>"; };
+		0404E37D1860848C00F9ADB8 /* WLSudaColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLSudaColors.h; sourceTree = "<group>"; };
 		041009381835004100BA4835 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		041009391835004100BA4835 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0410093D1835035400BA4835 /* auto_login_frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "auto_login_frame@2x.png"; sourceTree = "<group>"; };
@@ -701,6 +705,8 @@
 				04FE53CD1843890F002C4349 /* WLSudaCommonViewController.m */,
 				04A73F641849FF33009702A2 /* FirstPageModel.h */,
 				04A73F651849FF33009702A2 /* FirstPageModel.m */,
+				0404E37A18607CF700F9ADB8 /* FirstPageNewsViewController.h */,
+				0404E37B18607CF700F9ADB8 /* FirstPageNewsViewController.m */,
 			);
 			name = FirstPage;
 			path = CustomView;
@@ -785,6 +791,7 @@
 			children = (
 				04FE53D01843EA71002C4349 /* CheckNetWork.h */,
 				04FE53D11843EA71002C4349 /* CheckNetWork.m */,
+				0404E37D1860848C00F9ADB8 /* WLSudaColors.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1384,6 +1391,7 @@
 				04FE53CE1843890F002C4349 /* WLSudaCommonViewController.m in Sources */,
 				755E149D18043D8D00C7925B /* main.m in Sources */,
 				04FE53D61843F1CB002C4349 /* AccountSettingViewController.m in Sources */,
+				0404E37C18607CF700F9ADB8 /* FirstPageNewsViewController.m in Sources */,
 				7532E6F318314E6F00498BB0 /* MBProgressHUD.m in Sources */,
 				75715A2A1843790700F64AF8 /* FUITextField.m in Sources */,
 				041564751833AD0700892EF1 /* ASIDataDecompressor.m in Sources */,

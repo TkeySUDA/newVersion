@@ -19,7 +19,7 @@
         // Initialization code
         self.backgroundColor=[UIColor clearColor];
         detailInfoButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        detailInfoButton.backgroundColor=[UIColor redColor];
+        detailInfoButton.backgroundColor=WLSuda_gray1;
         detailInfoButton.frame=CGRectMake(0, 0, 80, 64);
         [detailInfoButton setTitle:@"详细信息" forState:UIControlStateNormal];
         detailInfoButton.titleLabel.font=[UIFont systemFontOfSize:12];
@@ -28,7 +28,7 @@
         detailInfoButton.tag=0;
         
         guaShiButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        guaShiButton.backgroundColor=[UIColor cyanColor];
+        guaShiButton.backgroundColor=WLSuda_gray2;
         guaShiButton.frame=CGRectMake(80, 0, 80, 64);
         [guaShiButton setTitle:@"挂失" forState:UIControlStateNormal];
         guaShiButton.titleLabel.font=[UIFont systemFontOfSize:12];
@@ -37,7 +37,7 @@
         guaShiButton.tag=1;
         
         changePsdButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        changePsdButton.backgroundColor=[UIColor purpleColor];
+        changePsdButton.backgroundColor=WLSuda_gray3;
         changePsdButton.frame=CGRectMake(160, 0, 80, 64);
         [changePsdButton setTitle:@"修改密码" forState:UIControlStateNormal];
         changePsdButton.titleLabel.font=[UIFont systemFontOfSize:12];
@@ -46,9 +46,9 @@
         changePsdButton.tag=2;
         
         consumptionSearchButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        consumptionSearchButton.backgroundColor=[UIColor blueColor];
+        consumptionSearchButton.backgroundColor=WLSuda_gray4;
         consumptionSearchButton.frame=CGRectMake(240, 0, 80, 64);
-        [consumptionSearchButton setTitle:@"消费查询" forState:UIControlStateNormal];
+        [consumptionSearchButton setTitle:@"当日消费" forState:UIControlStateNormal];
         consumptionSearchButton.titleLabel.font=[UIFont systemFontOfSize:12];
         consumptionSearchButton.titleLabel.textColor=[UIColor blackColor];
         [consumptionSearchButton addTarget:self action:@selector(btClicked:) forControlEvents:UIControlEventTouchUpInside];

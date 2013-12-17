@@ -68,7 +68,7 @@
     guaShiView=[[GuaShiView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
     changePsdView=[[ChangePsdView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
     consumptionView=[[ConsumptionView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
-    detailInfoView.backgroundColor=[UIColor redColor];
+    detailInfoView.backgroundColor=WLSuda_gray1;
     change=[[UIView  alloc]init];
     [self.view addSubview:detailInfoView];
     [self.view addSubview:btScrollView];
@@ -89,14 +89,14 @@
 {
     if ([which isEqualToString:@"0"]) {
         NSLog(@"详细信息");
-        detailInfoView.backgroundColor=[UIColor redColor];
+        detailInfoView.backgroundColor=WLSuda_gray1;
         [functionScrollView addSubview:detailInfoView];
     }else if ([which isEqualToString:@"1"]){
         NSLog(@"苏大通挂失");
         NSString *flag=[[[NSUserDefaults standardUserDefaults]objectForKey:@"flag"] substringWithRange:NSMakeRange(0, 4)];
         if ([flag isEqualToString:@"0010"]) {
             change.frame=CGRectMake(0, 0, 320, SCREEN_HEIGHT-228);
-            change.backgroundColor=[UIColor cyanColor];
+            change.backgroundColor=WLSuda_gray2;
             UILabel *inform=[[UILabel alloc]initWithFrame:CGRectMake(0, 20, 320, 30)];
             inform.text=@"您的苏大通已经挂失，解挂请到东区网络中心";
             inform.font=[UIFont systemFontOfSize:15];
@@ -104,20 +104,20 @@
             [change addSubview:inform];
             [functionScrollView addSubview:change];
         }else if ([flag isEqualToString:@"0000"]){
-            guaShiView.backgroundColor=[UIColor cyanColor];
+            guaShiView.backgroundColor=WLSuda_gray2;
             guaShiView.delegate=self;
             [functionScrollView addSubview:guaShiView];
         }
         
     }else if ([which isEqualToString:@"2"]){
         NSLog(@"修改密码");
-        changePsdView.backgroundColor=[UIColor purpleColor];
+        changePsdView.backgroundColor=WLSuda_gray3;
         changePsdView.delegate=self;
         [functionScrollView addSubview:changePsdView];
         
     }else if ([which isEqualToString:@"3"]){
         NSLog(@"消费查询");
-        consumptionView.backgroundColor=[UIColor blueColor];
+        consumptionView.backgroundColor=WLSuda_gray4;
         [consumptionView setContentOfView];
         [functionScrollView addSubview:consumptionView];
     }

@@ -17,7 +17,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor=[UIColor orangeColor];
+        self.backgroundColor=WLSuda_gray;
         photoImage=[UIButton buttonWithType:UIButtonTypeCustom];
         photoImage.frame=CGRectMake(5, 5, 70, 90);
         name=[[UILabel alloc]initWithFrame:CGRectMake(80, 0, 120, 40)];

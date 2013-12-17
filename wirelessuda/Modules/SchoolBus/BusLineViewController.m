@@ -35,11 +35,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIBarButtonItem *BackBtn = [[UIBarButtonItem alloc] initWithTitle:@"返回"
+                                                                style:UIBarButtonItemStylePlain
+                                                               target:self
+                                                               action:@selector(backAction:)];
+    self.navigationItem.leftBarButtonItem = BackBtn;
     lineData = [[[NSMutableArray alloc] initWithArray:[[BusLineDataSourde sharedData] linesArrayAndTimeSorted:selectTitle]] mutableCopy];
     NSLog(@"string");
 }
 
-
+- (void)backAction:(UIButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView

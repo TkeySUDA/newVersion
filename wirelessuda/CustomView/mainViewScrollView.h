@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic)NSMutableArray *imagePage;
 @property (strong, nonatomic)NSMutableArray *detail;
-@property (strong, nonatomic)id<FirstPageButtonDelegtate> delegate;
+@property (strong, nonatomic)id<FirstPageButtonDelegtate> buttonDelegate;
 
 -(void)setImage;
 @end

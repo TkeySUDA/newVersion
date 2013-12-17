@@ -62,7 +62,6 @@
     {
         functionScrollView.frame=CGRectMake(0, 164, 320, SCREEN_HEIGHT-164-44);
     }
-    NSLog(@"aaaaa%f",SCREEN_HEIGHT);
     functionScrollView.backgroundColor=[UIColor orangeColor];
     
     detailInfoView=[[DetailInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];

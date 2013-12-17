@@ -68,7 +68,6 @@
     [topScrollView setImage];
     topScrollView.delegate=self;
     netWorkStatus=[CheckNetWork getNetWorkStatus];
-    NSLog(@",,,,net%@",netWorkStatus);
 #pragma mark - 定时器
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
 #pragma mark - 初始化mypagecontrol
@@ -157,6 +156,7 @@
         {
             //苏大通
             NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+            NSLog(@"..%@",[defaults objectForKey:@"cardAutoLogin"]);
             if ([[defaults objectForKey:@"cardAutoLogin"] isEqualToString:@"0"]) {
                 NSString *account=[[NSUserDefaults standardUserDefaults]objectForKey:@"account"];
                 CardModel *cardModel=[CardModel shareInstance];

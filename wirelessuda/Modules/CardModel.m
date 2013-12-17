@@ -27,13 +27,6 @@
         request.delegate=self;
         request.tag=CardFirstLogin;
         [request startSynchronous];
-    }else if ([tag isEqualToString:@"autoLogin"]){
-        NSString *urlString = [NSString stringWithFormat:@"%@?account=%@",url,param1];
-        NSURL *urlLast=[NSURL URLWithString:urlString];
-        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
-        request.delegate=self;
-        request.tag=AutoLogin;
-        [request startSynchronous];
     }
     else if ([tag isEqualToString:@"GuaShi"]){
         NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@",url,param1,param2];
@@ -60,13 +53,7 @@
     if (request.tag==CardFirstLogin){
         CardAllData *cardAllData=[CardAllData cardAllDataWithJson:responseString];
         [CardAllData setDataAsDefault:cardAllData];
-        NSDictionary *all=[[NSUserDefaults standardUserDefaults] objectForKey:@"cardAllData"];
-        NSLog(@"cardALLdata:%@",all);
         [delegate getLoginResult:cardAllData];
-        [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardAutoLogin"];
-    }else if (request.tag==AutoLogin){
-        CardBaseData *cardBaseData=[CardBaseData cardBaseDataWithJson:responseString];
-        [delegate getAutoLoginResult:cardBaseData];
     }
     else if(request.tag==GuaShi)
     {

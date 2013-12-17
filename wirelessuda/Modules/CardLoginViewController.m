@@ -187,36 +187,33 @@
         }
         [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"cardUsername"];
         [[NSUserDefaults standardUserDefaults]setObject:passwordField.text forKey:@"cardPassword"];
-//        NSString *name=result.name;
-//        NSString *stuNum=result.stuNum;
-//        NSLog(@"登录成功%@,%@",name,stuNum);
         CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:cardViewController animated:YES];
         cardViewController.navigationController.navigationBar.hidden=NO;
     }
 }
--(void)getCardLoginStatus:(NSString *)status
-{
-    if ([status isEqualToString:@"-2"]) {
-        NSLog(@"登录失败");
-        UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    else if ([status isEqualToString:@"0"]){
-        if ([autoLogin isEqualToString:@"0"]) {
-            [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardAutoLogin"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }else{
-            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
-        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"cardUsername"];
-        [[NSUserDefaults standardUserDefaults]setObject:passwordField.text forKey:@"cardPassword"];
-        CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
-        [self.navigationController pushViewController:cardViewController animated:YES];
-        cardViewController.navigationController.navigationBar.hidden=NO;
-    }
-}
+//-(void)getCardLoginStatus:(NSString *)status
+//{
+//    if ([status isEqualToString:@"-2"]) {
+//        NSLog(@"登录失败");
+//        UIAlertView * alert= [[UIAlertView alloc]initWithTitle:nil message:@"用户名或密码输入错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alert show];
+//    }
+//    else if ([status isEqualToString:@"0"]){
+//        if ([autoLogin isEqualToString:@"0"]) {
+//            [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardAutoLogin"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//        }else{
+//            [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+//        }
+//        [[NSUserDefaults standardUserDefaults] setObject:usernameField.text forKey:@"cardUsername"];
+//        [[NSUserDefaults standardUserDefaults]setObject:passwordField.text forKey:@"cardPassword"];
+//        CardViewController *cardViewController=[[CardViewController alloc]initWithNibName:nil bundle:nil];
+//        [self.navigationController pushViewController:cardViewController animated:YES];
+//        cardViewController.navigationController.navigationBar.hidden=NO;
+//    }
+//}
 
 -(void)onBackClick
 {

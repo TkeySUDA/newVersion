@@ -12,7 +12,7 @@
 @implementation mainViewScrollView
 @synthesize imagePage;
 @synthesize detail;
-@synthesize delegate;
+@synthesize buttonDelegate;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -90,7 +90,7 @@
 -(void)newsClicked:(UIButton *)button
 {
     NSLog(@"%@",[imagePage objectAtIndex:button.tag]);
-    [delegate getFirstPageDetailNews:[imagePage objectAtIndex:button.tag] withDetail:[detail objectAtIndex:button.tag]];
+    [buttonDelegate getFirstPageDetailNews:[imagePage objectAtIndex:button.tag] withDetail:[detail objectAtIndex:button.tag]];
 }
 
 @end

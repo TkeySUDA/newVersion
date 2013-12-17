@@ -8,6 +8,7 @@
 
 #import "AccountSettingViewController.h"
 #import "HelpAndSugestionViewController.h"
+#import "DevelopersViewController.h"
 
 @interface AccountSettingViewController ()
 
@@ -64,6 +65,11 @@
         HelpAndSugestionViewController *helpAndSugestionViewController=[[HelpAndSugestionViewController alloc]initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:helpAndSugestionViewController animated:YES];
         helpAndSugestionViewController.navigationController.navigationBar.hidden=NO;
+    }
+    if (indexPath.row == 3) {
+        DevelopersViewController *developersViewController = [[DevelopersViewController alloc]initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:developersViewController animated:YES];
+        developersViewController.navigationController.navigationBar.hidden = NO;
     }
 }
 

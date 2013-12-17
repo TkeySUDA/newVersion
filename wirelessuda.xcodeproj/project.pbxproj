@@ -93,10 +93,11 @@
 		7525678A18607F440073DA7E /* ForgetPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525678918607F440073DA7E /* ForgetPsdViewController.m */; };
 		7525678C18608B1A0073DA7E /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525678B18608B1A0073DA7E /* 80x80.png */; };
 		7525679318608CA50073DA7E /* 48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525678F18608CA50073DA7E /* 48x48.png */; };
-		7525679418608CA50073DA7E /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525679018608CA50073DA7E /* 120x120.png */; };
+		7525679418608CA50073DA7E /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 7525679018608CA50073DA7E /* 120.png */; };
 		752567961860906E0073DA7E /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752567951860906E0073DA7E /* Images-2.xcassets */; };
 		75256799186090D50073DA7E /* 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 75256797186090D50073DA7E /* 640x1136.png */; };
 		7525679A186090D50073DA7E /* 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 75256798186090D50073DA7E /* 640x960.png */; };
+		7525679D1860931F0073DA7E /* DevelopersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525679C1860931F0073DA7E /* DevelopersViewController.m */; };
 		752B70031841BD5400D57BD1 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70021841BD5400D57BD1 /* WeatherModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		752B70091841BD8A00D57BD1 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70081841BD8A00D57BD1 /* WeatherView.m */; };
 		752B700C1841BDB000D57BD1 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B700B1841BDB000D57BD1 /* WeatherViewController.m */; };
@@ -347,10 +348,12 @@
 		7525678918607F440073DA7E /* ForgetPsdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPsdViewController.m; sourceTree = "<group>"; };
 		7525678B18608B1A0073DA7E /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
 		7525678F18608CA50073DA7E /* 48x48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 48x48.png; sourceTree = "<group>"; };
-		7525679018608CA50073DA7E /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
+		7525679018608CA50073DA7E /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
 		752567951860906E0073DA7E /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		75256797186090D50073DA7E /* 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x1136.png; sourceTree = "<group>"; };
 		75256798186090D50073DA7E /* 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x960.png; sourceTree = "<group>"; };
+		7525679B1860931F0073DA7E /* DevelopersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevelopersViewController.h; sourceTree = "<group>"; };
+		7525679C1860931F0073DA7E /* DevelopersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevelopersViewController.m; sourceTree = "<group>"; };
 		752B70011841BD5400D57BD1 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = SOURCE_ROOT; };
 		752B70021841BD5400D57BD1 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = SOURCE_ROOT; };
 		752B70071841BD8A00D57BD1 /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = SOURCE_ROOT; };
@@ -811,6 +814,8 @@
 				04FE53D51843F1CB002C4349 /* AccountSettingViewController.m */,
 				04FE53D71843F951002C4349 /* HelpAndSugestionViewController.h */,
 				04FE53D81843F951002C4349 /* HelpAndSugestionViewController.m */,
+				7525679B1860931F0073DA7E /* DevelopersViewController.h */,
+				7525679C1860931F0073DA7E /* DevelopersViewController.m */,
 			);
 			path = AccountSettings;
 			sourceTree = "<group>";
@@ -991,7 +996,7 @@
 				75256797186090D50073DA7E /* 640x1136.png */,
 				75256798186090D50073DA7E /* 640x960.png */,
 				7525678F18608CA50073DA7E /* 48x48.png */,
-				7525679018608CA50073DA7E /* 120x120.png */,
+				7525679018608CA50073DA7E /* 120.png */,
 				7525678B18608B1A0073DA7E /* 80x80.png */,
 				04740EF1181B84F50057B109 /* Reference */,
 				755E149618043D8D00C7925B /* wirelessuda */,
@@ -1346,7 +1351,7 @@
 				752567961860906E0073DA7E /* Images-2.xcassets in Resources */,
 				75528387182D478F008C9C70 /* login.png in Resources */,
 				75715A3C1843790700F64AF8 /* Lato-Bold.ttf in Resources */,
-				7525679418608CA50073DA7E /* 120x120.png in Resources */,
+				7525679418608CA50073DA7E /* 120.png in Resources */,
 				75715A3D1843790700F64AF8 /* Lato-BoldItalic.ttf in Resources */,
 				041009561835035400BA4835 /* login18.png in Resources */,
 				0410094D1835035400BA4835 /* btn_nor.png in Resources */,
@@ -1463,6 +1468,7 @@
 				04740F19181B85100057B109 /* UIButton+WebCache.m in Sources */,
 				04740F1B181B85100057B109 /* UIImage+MultiFormat.m in Sources */,
 				75591A4B1846FE930016C85C /* NewsDetailViewController.m in Sources */,
+				7525679D1860931F0073DA7E /* DevelopersViewController.m in Sources */,
 				04740F24181B86710057B109 /* mainViewScrollView.m in Sources */,
 				04FFBB40183BBA5600BA9199 /* BindPhoneView.m in Sources */,
 				75715A2D1843790700F64AF8 /* UIFont+FlatUI.m in Sources */,

@@ -78,12 +78,12 @@
 }
 -(void)backAction:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)cancelClick:(id)sender
 {
     [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)buttonClick:(NSString *)which
 {

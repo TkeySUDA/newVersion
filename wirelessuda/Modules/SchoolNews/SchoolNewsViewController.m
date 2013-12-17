@@ -124,7 +124,13 @@
     if (cell == nil) {
         cell = [[SchoolNewsCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     }
-	
+	if (indexPath.row % 2 == 0) {
+        cell.backgroundColor = [UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1];
+    }
+    else
+    {
+        cell.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
+    }
     cell.title.text = [[rssList objectAtIndex:indexPath.row] objectForKey:@"title"];
     cell.creator.text = [NSString stringWithFormat:@"发布部门:%@",[[rssList objectAtIndex:indexPath.row] objectForKey:@"dc:creator"]];
     cell.date.text = [self dealWithDate:[[rssList objectAtIndex:indexPath.row

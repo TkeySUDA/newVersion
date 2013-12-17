@@ -90,6 +90,7 @@
 		751BDF261844E09900E34417 /* SchoolNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF231844E09900E34417 /* SchoolNewsDetailViewController.m */; };
 		751BDF271844E09900E34417 /* SchoolNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF251844E09900E34417 /* SchoolNewsViewController.m */; };
 		751BDF2C1844E2A600E34417 /* SchoolNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 751BDF2B1844E2A600E34417 /* SchoolNewsCell.m */; };
+		7525678A18607F440073DA7E /* ForgetPsdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7525678918607F440073DA7E /* ForgetPsdViewController.m */; };
 		752B70031841BD5400D57BD1 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70021841BD5400D57BD1 /* WeatherModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		752B70091841BD8A00D57BD1 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B70081841BD8A00D57BD1 /* WeatherView.m */; };
 		752B700C1841BDB000D57BD1 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752B700B1841BDB000D57BD1 /* WeatherViewController.m */; };
@@ -336,6 +337,8 @@
 		751BDF251844E09900E34417 /* SchoolNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsViewController.m; sourceTree = "<group>"; };
 		751BDF2A1844E2A600E34417 /* SchoolNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolNewsCell.h; sourceTree = "<group>"; };
 		751BDF2B1844E2A600E34417 /* SchoolNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolNewsCell.m; sourceTree = "<group>"; };
+		7525678818607F440073DA7E /* ForgetPsdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPsdViewController.h; sourceTree = "<group>"; };
+		7525678918607F440073DA7E /* ForgetPsdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPsdViewController.m; sourceTree = "<group>"; };
 		752B70011841BD5400D57BD1 /* WeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = SOURCE_ROOT; };
 		752B70021841BD5400D57BD1 /* WeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = SOURCE_ROOT; };
 		752B70071841BD8A00D57BD1 /* WeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = SOURCE_ROOT; };
@@ -873,6 +876,8 @@
 				041009391835004100BA4835 /* LoginViewController.m */,
 				7532E61E182F9FEC00498BB0 /* GateWayViewController.h */,
 				7532E61F182F9FEC00498BB0 /* GateWayViewController.m */,
+				7525678818607F440073DA7E /* ForgetPsdViewController.h */,
+				7525678918607F440073DA7E /* ForgetPsdViewController.m */,
 			);
 			name = GateWayViewController;
 			sourceTree = "<group>";
@@ -1380,6 +1385,7 @@
 				7532E620182F9FEC00498BB0 /* GateWayViewController.m in Sources */,
 				75591A5318475DB20016C85C /* CardViewController.m in Sources */,
 				041564571833ACD300892EF1 /* GateWayModel.m in Sources */,
+				7525678A18607F440073DA7E /* ForgetPsdViewController.m in Sources */,
 				041564BF1833B93F00892EF1 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				04FE53CE1843890F002C4349 /* WLSudaCommonViewController.m in Sources */,
 				755E149D18043D8D00C7925B /* main.m in Sources */,

@@ -19,6 +19,7 @@
 #import "WeatherViewController.h"
 #import "FirstPageModel.h"
 #import "CardViewController.h"
+#import "FirstPageNewsViewController.h"
 
 @interface WLSudaMainViewController ()
 
@@ -66,7 +67,7 @@
     topScrollView=[[mainViewScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 160)];
 
     [topScrollView setImage];
-    topScrollView.delegate=self;
+    topScrollView.buttonDelegate=self;
     netWorkStatus=[CheckNetWork getNetWorkStatus];
 #pragma mark - 定时器
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
@@ -99,12 +100,13 @@
     [self.view addSubview:subView];
     
 }
--(void)getFirstPageDetailNews:(NSString *)image withDetail:(NSString *)detail
+-(void)getFirstPageDetailNews:(NSString *)detail
 {
-    UIViewController *firstPageNewsViewController=[[UIViewController alloc]initWithNibName:nil bundle:nil];
+    FirstPageNewsViewController *firstPageNewsViewController=[[FirstPageNewsViewController alloc]initWithNibName:nil bundle:nil];
+    firstPageNewsViewController.detailUrl=detail;
     firstPageNewsViewController.view.backgroundColor=[UIColor whiteColor];
-    firstPageNewsViewController.navigationController.navigationBarHidden=NO;
     [self.navigationController pushViewController:firstPageNewsViewController animated:YES];
+    firstPageNewsViewController.navigationController.navigationBar.hidden=NO;
 }
 
 -(void)buttonClicked:(id)sender

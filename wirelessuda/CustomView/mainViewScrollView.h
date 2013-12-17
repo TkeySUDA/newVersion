@@ -8,7 +8,7 @@
 @protocol FirstPageButtonDelegtate <NSObject>
 
 @optional
--(void)getFirstPageDetailNews:(NSString *)image withDetail:(NSString *)detail;
+-(void)getFirstPageDetailNews:(NSString *)detail;
 @end
 
 #import <UIKit/UIKit.h>

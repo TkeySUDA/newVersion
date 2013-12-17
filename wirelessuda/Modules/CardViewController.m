@@ -140,6 +140,9 @@
         [alertView show];
         CardLoginViewController *loginViewController=[[CardLoginViewController alloc] init];
         [self.navigationController pushViewController:loginViewController animated:YES];
+    }else{
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:nil message:@"密码错误" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
     }
 }
 -(void)viewWillAppear:(BOOL)animated

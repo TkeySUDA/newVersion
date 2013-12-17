@@ -20,16 +20,6 @@
     return cardModel;
 }
 - (void) startRequest:(NSString *)tag withUrl:(NSString *)url withParam1:(NSString *)param1 withParam2:(NSString *)param2 withParam3:(NSString *)param3 withParam4:(NSString *)param4{
-//    if ([tag isEqualToString:@"notFirstAndNotAuto"]) {
-//        NSString *urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@&usertype=1&logintype=2",url,param1,param2];
-//        NSLog(@"%@",urlString);
-//        NSURL *urlLast=[NSURL URLWithString:urlString];
-//        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
-//        request.delegate=self;
-//        request.tag=CardLogin;
-//        [request startSynchronous];
-//    }
-//    else
     if([tag isEqualToString:@"FirstLogin"]){
         NSString *urlString = [NSString stringWithFormat:@"%@?username=%@&password=%@&usertype=1&logintype=2",url,param1,param2];
         NSURL *urlLast=[NSURL URLWithString:urlString];
@@ -54,7 +44,8 @@
         request.tag=GuaShi;
         [request startSynchronous];
     }else if ([tag isEqualToString:@"ChangePassword"]){
-        NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@&newpassword=%@",url,param1,param2,param2];
+        NSString *urlString=[NSString stringWithFormat:@"%@?account=%@&password=%@&newpassword=%@",url,param1,param2,param3];
+        NSLog(@"url:%@",urlString);
         NSURL *urlLast=[NSURL URLWithString:urlString];
         ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
         request.delegate=self;
@@ -72,7 +63,7 @@
         NSDictionary *all=[[NSUserDefaults standardUserDefaults] objectForKey:@"cardAllData"];
         NSLog(@"cardALLdata:%@",all);
         [delegate getLoginResult:cardAllData];
-        [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardFirstLogin"];
+        [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"cardAutoLogin"];
     }else if (request.tag==AutoLogin){
         CardBaseData *cardBaseData=[CardBaseData cardBaseDataWithJson:responseString];
         [delegate getAutoLoginResult:cardBaseData];
@@ -87,9 +78,9 @@
         NSLog(@"修改密码成功");
         NSDictionary *result=[[responseString JSONValue]objectForKey:@"result"];
         NSString *resultin=[result objectForKey:@"resultin"];
-        NSLog(@"%@",resultin);
+        NSLog(@"resultin：%@",resultin);
         [delegate getChangePsdResult:resultin];
-        [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"cardFirstLogin"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
     }
 }
 @end

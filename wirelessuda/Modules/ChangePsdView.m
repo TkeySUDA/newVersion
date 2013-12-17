@@ -109,7 +109,7 @@
         CardModel *cardModel=[CardModel shareInstance];
         cardModel.delegate=self;
         NSString *account=[[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
-        [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
+        [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/ModifyPsd" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
     }
 }
 -(void)getChangePsdResult:(NSString *)result{

@@ -23,43 +23,38 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        turnover= [[UILabel alloc]initWithFrame:CGRectMake(20, 20, 80, 30)];
-        turnover.text = @"交易额";
-        turnover.font = [UIFont fontWithName:@"Helvetica" size:18];
+        turnover= [[UILabel alloc]initWithFrame:CGRectMake(10, 10, 80, 30)];
+        turnover.text = @"交易额:";
+        turnover.font = [UIFont fontWithName:@"Helvetica" size:16];
         turnover.textAlignment = UITextAlignmentCenter;
         turnover.backgroundColor = [UIColor clearColor];
         
-        turnoverNumber = [[UILabel alloc]initWithFrame:CGRectMake(20, 45, 100, 50)];
+        turnoverNumber = [[UILabel alloc]initWithFrame:CGRectMake(90, 0, 80, 50)];
         turnoverNumber.font = [UIFont fontWithName:@"Helvetica" size:25];
         turnoverNumber.textAlignment = UITextAlignmentCenter;
         turnoverNumber.backgroundColor = [UIColor clearColor];
         turnoverNumber.textColor = [UIColor redColor];
         
-        balance= [[UILabel alloc]initWithFrame:CGRectMake(180, 20, 80, 30)];
-        balance.text = @"余额";
-        balance.font = [UIFont fontWithName:@"Helvetica" size:18];
+        balance= [[UILabel alloc]initWithFrame:CGRectMake(160, 10, 80, 30)];
+        balance.text = @"余额:";
+        balance.font = [UIFont fontWithName:@"Helvetica" size:16];
         balance.textAlignment = UITextAlignmentCenter;
         balance.backgroundColor = [UIColor clearColor];
         
-        balanceNumber = [[UILabel alloc]initWithFrame:CGRectMake(180, 45, 100, 50)];
+        balanceNumber = [[UILabel alloc]initWithFrame:CGRectMake(240, 0, 80, 50)];
         balanceNumber.font = [UIFont fontWithName:@"Helvetica" size:25];
         balanceNumber.textAlignment = UITextAlignmentCenter;
         balanceNumber.backgroundColor = [UIColor clearColor];
         balanceNumber.textColor = [UIColor redColor];
         
-        time = [[UILabel alloc]initWithFrame:CGRectMake(80, 160, 200, 20)];
+        time = [[UILabel alloc]initWithFrame:CGRectMake(20, 80, 300, 20)];
         time.font = [UIFont fontWithName:@"Helvetica" size:16];
-        time.textAlignment = UITextAlignmentRight;
+        time.textAlignment = UITextAlignmentLeft;
         time.backgroundColor = [UIColor clearColor];
         
-        type = [[UILabel alloc]initWithFrame:CGRectMake(80, 100, 200, 20)];
-        type.font = [UIFont fontWithName:@"Helvetica" size:16];
-        type.textAlignment = UITextAlignmentRight;
-        type.backgroundColor = [UIColor clearColor];
-        
-        place = [[UILabel alloc]initWithFrame:CGRectMake(80, 130, 200, 20)];
+        place = [[UILabel alloc]initWithFrame:CGRectMake(20, 50, 310, 20)];
         place.font = [UIFont fontWithName:@"Helvetica" size:16];
-        place.textAlignment = UITextAlignmentRight;
+        place.textAlignment = UITextAlignmentLeft;
         place.backgroundColor = [UIColor clearColor];
         
         [self addSubview:turnover];

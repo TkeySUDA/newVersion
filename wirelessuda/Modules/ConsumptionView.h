@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardModel.h"
 
-@interface ConsumptionView : UIView<UITableViewDataSource,UITableViewDelegate>
+@interface ConsumptionView : UIView<UITableViewDataSource,UITableViewDelegate,CardDelegate>
 
 @property (strong, nonatomic)UITableView *tableView;
-@property (strong, nonatomic)UILabel *name;
-@property (strong, nonatomic)UILabel *stuId;
+@property (strong, nonatomic)NSMutableArray *consumption;
 
-@property (strong, nonatomic)NSMutableArray *turnover;
-@property (strong, nonatomic)NSMutableArray *balance;
-@property (strong, nonatomic)NSMutableArray *time;
-@property (strong, nonatomic)NSMutableArray *place;
-@property (strong, nonatomic)NSMutableArray *type;
+-(void)setContentOfView;
+
 @end

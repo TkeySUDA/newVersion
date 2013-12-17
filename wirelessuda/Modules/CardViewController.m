@@ -118,6 +118,7 @@
     }else if ([which isEqualToString:@"3"]){
         NSLog(@"消费查询");
         consumptionView.backgroundColor=[UIColor blueColor];
+        [consumptionView setContentOfView];
         [functionScrollView addSubview:consumptionView];
     }
 }

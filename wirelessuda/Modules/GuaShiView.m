@@ -22,7 +22,7 @@
         usernameLabel=[[UILabel alloc] initWithFrame:CGRectMake(30, 20, 60, 35)];
         usernameLabel.text=@"账号:";
         usernameField=[[UILabel alloc] initWithFrame:CGRectMake(90, 20, 150, 35)];
-        usernameField.text=@"1127403119";
+        usernameField.text=[[NSUserDefaults standardUserDefaults] objectForKey:@"cardUsername"];
         usernameField.textColor=[UIColor  redColor];
         usernameField.backgroundColor=[UIColor whiteColor];
         

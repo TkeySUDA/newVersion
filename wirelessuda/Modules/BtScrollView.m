@@ -54,15 +54,6 @@
         [consumptionSearchButton addTarget:self action:@selector(btClicked:) forControlEvents:UIControlEventTouchUpInside];
         consumptionSearchButton.tag=3;
         
-        pickCardButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        pickCardButton.backgroundColor=[UIColor purpleColor];
-        pickCardButton.frame=CGRectMake(300, 0, 80, 64);
-        [pickCardButton setTitle:@"捡卡功能" forState:UIControlStateNormal];
-        pickCardButton.titleLabel.font=[UIFont systemFontOfSize:12];
-        pickCardButton.titleLabel.textColor=[UIColor blackColor];
-        [pickCardButton addTarget:self action:@selector(btClicked:) forControlEvents:UIControlEventTouchUpInside];
-        pickCardButton.tag=4;
-        
         [self addSubview:detailInfoButton];
         [self addSubview:guaShiButton];
         [self addSubview:changePsdButton];

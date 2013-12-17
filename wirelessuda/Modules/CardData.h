@@ -33,4 +33,12 @@
 +(id)cardAllDataWithJson:(NSString *)responseString;
 +(void)setDataAsDefault:(CardAllData *)data;
 @end
+@interface CardConsumptionData : NSObject
 
+@property (strong, nonatomic) NSString *FCardBalance;
+@property (strong, nonatomic) NSString *FTranAmt;
+@property (strong, nonatomic) NSString *jndatetime;
+@property (strong, nonatomic) NSString *sysname1;
+
++(id)cardConsumptionDataWithJson:(NSDictionary *)json;
+@end

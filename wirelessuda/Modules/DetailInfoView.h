@@ -10,4 +10,8 @@
 
 @interface DetailInfoView : UIView
 
+@property (strong, nonatomic)UILabel *usernameLabel;
+@property (strong, nonatomic)UILabel *usernameField;
+@property (strong, nonatomic)UILabel *passwordLabel;
+
 @end

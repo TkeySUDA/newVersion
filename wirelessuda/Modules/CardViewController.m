@@ -62,7 +62,6 @@
     {
         functionScrollView.frame=CGRectMake(0, 164, 320, SCREEN_HEIGHT-164-44);
     }
-    NSLog(@"aaaaa%f",SCREEN_HEIGHT);
     functionScrollView.backgroundColor=[UIColor orangeColor];
     
     detailInfoView=[[DetailInfoView alloc]initWithFrame:CGRectMake(0, 0, 320, SCREEN_HEIGHT-228)];
@@ -140,6 +139,9 @@
         [alertView show];
         CardLoginViewController *loginViewController=[[CardLoginViewController alloc] init];
         [self.navigationController pushViewController:loginViewController animated:YES];
+    }else{
+        UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:nil message:@"密码错误" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
     }
 }
 -(void)viewWillAppear:(BOOL)animated

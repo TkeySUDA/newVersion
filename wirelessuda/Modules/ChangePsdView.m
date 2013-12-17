@@ -87,10 +87,10 @@
         hud.removeFromSuperViewOnHide = YES;
         [hud hide:YES afterDelay:2];
         [beformPsdText becomeFirstResponder];
-    }else if ([changedPsdText.text isEqualToString:@""]||changedPsdText.text.length<6){
+    }else if ([changedPsdText.text isEqualToString:@""]||changedPsdText.text.length!=6){
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
         hud.mode = MBProgressHUDModeText;
-        hud.labelText = @"     请输入六位以上新密码！     ";
+        hud.labelText = @"     请输入六位新密码！     ";
         hud.margin = 15.f;
         hud.yOffset = -80.f;
         hud.removeFromSuperViewOnHide = YES;
@@ -109,7 +109,7 @@
         CardModel *cardModel=[CardModel shareInstance];
         cardModel.delegate=self;
         NSString *account=[[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
-        [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/AccountDoLoss" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
+        [cardModel startRequest:@"ChangePassword" withUrl:@"http://weixin.suda.edu.cn/servlet/ModifyPsd" withParam1:account withParam2:beformPsdText.text withParam3:changedPsdText.text withParam4:nil];
     }
 }
 -(void)getChangePsdResult:(NSString *)result{

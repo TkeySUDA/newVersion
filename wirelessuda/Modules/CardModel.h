@@ -34,8 +34,6 @@ typedef enum {
 @optional
 
 -(void)getLoginResult:(CardAllData *)result;
--(void)getLoginStatus:(NSString *)result;
 -(void)getGuaShiResult:(NSString *)result;
--(void)getAutoLoginResult:(CardBaseData *)result;
 -(void)getChangePsdResult:(NSString *)result;
 @end

@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/WLSudaMainViewController.m"
-            timestampString = "408805108.056527"
+            timestampString = "408943341.421736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -164,11 +164,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/Modules/CardLoginViewController.m"
-            timestampString = "407941448.630977"
+            timestampString = "408943138.990396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "-getCardResult:"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/Modules/CardModel.m"
-            timestampString = "408286872.536585"
+            timestampString = "408943341.421736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-startRequest:withUrl:withParam1:withParam2:withParam3:withParam4:"
             landmarkType = "5">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/Modules/CardModel.m"
-            timestampString = "408286872.536585"
+            timestampString = "408943341.421736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-requestFinished:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/Modules/CardModel.m"
-            timestampString = "408461172.083819"
+            timestampString = "408943341.421736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-requestFinished:"
             landmarkType = "5">
          </BreakpointContent>
@@ -228,27 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wirelessuda/Modules/CardModel.m"
-            timestampString = "408286872.536585"
+            timestampString = "408943341.421736"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-requestFinished:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wirelessuda/Modules/CardModel.m"
-            timestampString = "408286872.536585"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-requestFinished:"
             landmarkType = "5">
          </BreakpointContent>

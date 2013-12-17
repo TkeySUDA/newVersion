@@ -7,9 +7,10 @@
 //
 
 #import "PersonInfoView.h"
+#import "UIButton+WebCache.h"
 
 @implementation PersonInfoView
-@synthesize photo,name,sex,turnOver,cardNum;
+@synthesize photoImage,name,sex,turnOver,cardNum;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -17,20 +18,20 @@
     if (self) {
         // Initialization code
         self.backgroundColor=[UIColor orangeColor];
-        photo=[[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 50, 50)];
-        [photo setImage:[UIImage imageNamed:@"1.png"]];
-        name=[[UILabel alloc]initWithFrame:CGRectMake(70, 10, 80, 40)];
+        photoImage=[UIButton buttonWithType:UIButtonTypeCustom];
+        photoImage.frame=CGRectMake(5, 5, 70, 90);
+        name=[[UILabel alloc]initWithFrame:CGRectMake(80, 10, 80, 40)];
         name.textAlignment=NSTextAlignmentLeft;
         name.text=@"姓名:";
         name.backgroundColor = [UIColor clearColor];
-        sex=[[UILabel alloc]initWithFrame:CGRectMake(70, 50, 80, 40)];
+        sex=[[UILabel alloc]initWithFrame:CGRectMake(80, 50, 80, 40)];
         sex.textAlignment=NSTextAlignmentLeft;
         sex.text=@"性别:";
         sex.backgroundColor = [UIColor clearColor];
         turnOver=[[UILabel alloc]initWithFrame:CGRectNull];
         cardNum=[[UILabel alloc]initWithFrame:CGRectNull];
         
-        [self addSubview:photo];
+        [self addSubview:photoImage];
         [self addSubview:name];
         [self addSubview:sex];
         [self addSubview:turnOver];
@@ -40,6 +41,9 @@
 }
 -(void)setStuInfo:(NSDictionary *)stuInfo
 {
+    NSString *photo=[stuInfo objectForKey:@"photo"];
+    NSURL *photoUrl=[NSURL URLWithString:photo];
+    [photoImage setImageWithURL:photoUrl forState:UIControlStateNormal];
     NSString *nameString=[stuInfo objectForKey:@"name"];
     name.text=[NSString stringWithFormat:@"姓名:%@",nameString];
     NSString *sexName=[stuInfo objectForKey:@"sexName"];

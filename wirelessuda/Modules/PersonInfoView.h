@@ -11,7 +11,7 @@
 
 @interface PersonInfoView : UIView
 
-@property(strong, nonatomic)UIImageView *photo;
+@property(strong, nonatomic)UIButton *photoImage;
 @property(strong, nonatomic)UILabel *name;
 @property(strong, nonatomic)UILabel *sex;
 @property(strong, nonatomic)UILabel *turnOver;

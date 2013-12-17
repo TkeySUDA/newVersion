@@ -69,3 +69,17 @@
 }
 
 @end
+
+@implementation CardConsumptionData
+
++(id)cardConsumptionDataWithJson:(NSDictionary *)json
+{
+    CardConsumptionData *cardConsumptionData=[[CardConsumptionData alloc]init];
+    cardConsumptionData.FCardBalance=[json objectForKey:@"FCardBalance"];
+    cardConsumptionData.FTranAmt=[json objectForKey:@"FTranAmt"];
+    cardConsumptionData.jndatetime=[json objectForKey:@"jndatetime"];
+    cardConsumptionData.sysname1=[json objectForKey:@"sysname1"];
+    return cardConsumptionData;
+}
+
+@end

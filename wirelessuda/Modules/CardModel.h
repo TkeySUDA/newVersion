@@ -36,4 +36,5 @@ typedef enum {
 -(void)getLoginResult:(CardAllData *)result;
 -(void)getGuaShiResult:(NSString *)result;
 -(void)getChangePsdResult:(NSString *)result;
+-(void)getConsumptionData:(NSMutableArray *)data;
 @end

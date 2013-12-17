@@ -44,6 +44,14 @@
         request.delegate=self;
         request.tag=PassWord;
         [request startSynchronous];
+    }else if ([tag isEqualToString:@"Consumption"]){
+        NSString *urlString=[NSString stringWithFormat:@"%@?account=%@",url,param1];
+        NSLog(@"url:%@",urlString);
+        NSURL *urlLast=[NSURL URLWithString:urlString];
+        ASIHTTPRequest *request=[ASIHTTPRequest requestWithURL:urlLast];
+        request.delegate=self;
+        request.tag=Consumption;
+        [request startSynchronous];
     }
 }
 
@@ -68,6 +76,17 @@
         NSLog(@"resultin：%@",resultin);
         [delegate getChangePsdResult:resultin];
         [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"cardAutoLogin"];
+    }else if (request.tag==Consumption){
+        NSArray *results=[[responseString JSONValue]objectForKey:@"result"];
+        NSLog(@"results:%@",results);
+        NSMutableArray *resultsTable=[NSMutableArray arrayWithCapacity:30];
+        for (NSDictionary *result in results){
+            CardConsumptionData *consumptionData=[CardConsumptionData cardConsumptionDataWithJson:result];
+            if (consumptionData) {
+                [resultsTable addObject:consumptionData];
+            }
+        }
+        [delegate getConsumptionData:resultsTable];
     }
 }
 @end

@@ -14,7 +14,6 @@
 @property(strong, nonatomic)UIButton *photoImage;
 @property(strong, nonatomic)UILabel *name;
 @property(strong, nonatomic)UILabel *sex;
-@property(strong, nonatomic)UILabel *turnOver;
 @property(strong, nonatomic)UILabel *cardNum;
 
 -(void)setStuInfo:(NSDictionary *)stuInfo;

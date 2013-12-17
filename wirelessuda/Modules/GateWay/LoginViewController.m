@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "GateWayViewController.h"
 #import "LoginValidate.h"
+#import "ForgetPsdViewController.h"
 
 @interface LoginViewController ()
 
@@ -186,7 +187,9 @@
 #pragma mark - 忘记密码按钮
 - (void)onForgetClick
 {
-    
+    ForgetPsdViewController *forgetViewController = [[ForgetPsdViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:forgetViewController animated:YES];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 #pragma mark - 自动登录按钮

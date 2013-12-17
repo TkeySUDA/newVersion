@@ -28,9 +28,9 @@
     [campus2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     [campus2 addTarget:self action:@selector(campus2Press) forControlEvents:UIControlEventTouchUpInside];
     
+    
 
 }
-
 
 
 - (void)campus1Press
